@@ -1,51 +1,133 @@
-# Xuyutech Legal Docs Repository
+# Xuyutech Legal Documents
 
-This repository contains all the legal documents (Privacy Policy, Terms of Service, QA) for our products. These documents are organized by product, platform, country, and language.
+Welcome to the Xuyutech Legal Documents repository. This centralized hub stores all legal documents for our products, including Privacy Policies, Terms of Service, and FAQs, organized by product, platform, region, and language.
+
+[简体中文](README.zh-cn.md)
+
+## Quick Navigation
+
+- [Privacy Policies](#privacy-policies)
+- [Terms of Service](#terms-of-service)
+- [Frequently Asked Questions](#frequently-asked-questions)
+- [Documentation](#additional-documentation)
+- [How to Contribute](#how-to-contribute)
 
 ## Repository Structure
 
-### Root Directory
+```
+xuyutech-legal-docs/
+├── README.md                    # English documentation
+├── README.zh-cn.md              # Simplified Chinese documentation
+├── LICENSE                      # Open source license (if applicable)
+├── .gitignore                   # Git ignore rules
+│
+├── products/                    # Product-specific legal documents
+│   ├── Subs Manager iOS/
+│   │   ├── privacy-policy/      # Privacy policies by region
+│   │   ├── terms-of-service/    # Terms of service by region
+│   │   └── qa/                  # FAQs by region
+│   │
+│   └── Subs Manager Android/
+│       ├── privacy-policy/
+│       ├── terms-of-service/
+│       └── qa/
+│
+└── docs/                        # Supplementary documentation
+    ├── compliance.md            # Compliance guidelines
+    ├── faq.md                   # General FAQs
+    └── legal-notices.md         # Legal notices
+```
 
-- `README.md`: This file, containing repository information.
-- `LICENSE`: The open-source license for this repository (if applicable).
-- `.gitignore`: Specifies which files should not be tracked by Git.
+## Document Categories
 
-### `products/`
+### Privacy Policies
 
-This directory contains all of our products. Each product is organized by platform (e.g., iOS, Android). Each platform has legal documents available in different regions and languages.
+Privacy policies are stored under `products/[Product]/privacy-policy/[Region]/` and available in multiple languages:
+
+| Region | Folder | Languages |
+|--------|--------|-----------|
+| United States | `us/` | English (`en.md`), Spanish (`es.md`) |
+| China | `cn/` | Chinese (`zh-cn.md`), English (`en.md`) |
+| Spain | `es/` | Spanish (`es.md`), English (`en.md`) |
+
+Example path: `products/Subs Manager iOS/privacy-policy/us/en.md`
+
+### Terms of Service
+
+Terms of Service documents are organized in `products/[Product]/terms-of-service/[Region]/` following the same language structure as privacy policies.
+
+### Frequently Asked Questions
+
+FAQs are available in `products/[Product]/qa/[Region]/` to help users understand our policies and legal terms.
+
+## Language Support
+
+Each region supports multiple language versions. Legal documents use the following naming convention:
+
+- **English (US)**: `en.md`
+- **Chinese (Simplified)**: `zh-cn.md`
+- **Spanish**: `es.md`
+- **Other languages**: ISO 639-1 language codes
+
+## Additional Documentation
+
+The `docs/` directory contains supplementary materials:
+
+| File | Description |
+|------|-------------|
+| [docs/compliance.md](docs/compliance.md) | Data protection compliance information (GDPR, CCPA, PIPL) |
+| [docs/faq.md](docs/faq.md) | General questions about our legal documents |
+| [docs/legal-notices.md](docs/legal-notices.md) | Important legal notices and disclaimers |
+
+## How to Use This Repository
+
+### Finding a Document
+
+1. Navigate to the `products/` directory
+2. Select your product and platform
+3. Choose the document type (privacy policy, terms of service, or QA)
+4. Select your region and preferred language
+
+### Example: Finding Subs Manager iOS Privacy Policy (US English)
 
 ```
-products/
-├── Subs Manager iOS/
-│   ├── privacy-policy/
-│   ├── terms-of-service/
-│   ├── qa/
-│   └── ...
-├── Subs Manager Android/
-└── ...
+products/ → Subs Manager iOS/ → privacy-policy/ → us/ → en.md
 ```
 
-Each region (e.g., `us` for the United States, `cn` for China) has its own folder, and each region can have multiple language versions (e.g., English, Chinese, Spanish).
+## How to Contribute
 
-### Language Support
+We welcome contributions from the community. Please follow these guidelines:
 
-Each legal document (PP, TOS, QA) is available in multiple languages. For example:
-- English: `en.md`
-- Chinese: `zh-cn.md`
-- Spanish: `es.md`
-- etc.
+1. **Fork this repository** and create a feature branch
+2. **Make your changes** following our [document structure](#repository-structure)
+3. **Submit a Pull Request** with a clear description of your updates
+4. **Ensure compliance**: All changes must be reviewed by at least one team member
 
-### `docs/`
+### Contribution Requirements
 
-This directory contains additional documentation related to our legal files:
-- `faq.md`: Frequently Asked Questions regarding our legal documents.
-- `compliance.md`: Legal compliance information for data protection regulations (e.g., GDPR, CCPA).
-- `legal-notices.md`: Any necessary legal notices regarding our products.
+- Follow the [document naming conventions](#language-support)
+- Include both English and local language versions when adding new regions
+- Update the relevant documentation in `docs/` if needed
+- Provide detailed commit messages explaining your changes
 
-## Usage
+## Legal Compliance
 
-This repository provides a central place to manage all legal documents for our products. You can navigate to the appropriate product, platform, and language to find the corresponding documents.
+This repository maintains legal documents compliant with:
 
-## Contributions
+- **GDPR** - General Data Protection Regulation (EU)
+- **CCPA** - California Consumer Privacy Act (US)
+- **PIPL** - Personal Information Protection Law (China)
+- **Other applicable data protection regulations**
 
-Feel free to fork this repository and submit pull requests for any updates or changes to the legal documents. Please make sure to follow the document structure and include the appropriate language versions.
+For detailed compliance information, see [docs/compliance.md](docs/compliance.md).
+
+## Contact
+
+For questions about our legal documents or to report issues, please contact:
+
+- **Email**: [legal@xuyutech.com](mailto:legal@xuyutech.com)
+- **Issues**: Submit via GitHub Issues
+
+## License
+
+This repository is proprietary to Xuyutech. Please contact us for licensing inquiries.
