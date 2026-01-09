@@ -10,7 +10,6 @@
 - [服务条款](#服务条款)
 - [常见问题](#常见问题)
 - [附加文档](#附加文档)
-- [贡献指南](#如何贡献)
 
 ## 仓库结构
 
@@ -94,22 +93,6 @@ xuyutech-legal-docs/
 products/ → Subs Manager iOS/ → privacy-policy/ → us/ → en.md
 ```
 
-## 如何贡献
-
-我们欢迎社区贡献。请遵循以下指南：
-
-1. **Fork 本仓库** 并创建功能分支
-2. **按照仓库结构说明进行更改**
-3. **提交 Pull Request** 并详细描述您的更新内容
-4. **确保合规性**：所有更改必须经过至少一名团队成员审核
-
-### 贡献要求
-
-- 遵循文档命名规范
-- 添加新地区时需包含英语和当地语言版本
-- 如需更新 `docs/` 目录下的相关文档
-- 提供详细的提交说明解释您的更改
-
 ## 法律合规
 
 本仓库维护的法律文件符合以下法规：
@@ -125,8 +108,7 @@ products/ → Subs Manager iOS/ → privacy-policy/ → us/ → en.md
 
 如有关于法律文档的问题或需报告问题，请联系：
 
-- **邮箱**: [legal@xuyutech.com](mailto:legal@xuyutech.com)
-- **问题反馈**: 通过 GitHub Issues 提交
+- **邮箱**: [datachewer@gmail.com](mailto:datachewer@gmail.com)
 
 ## 许可证
 

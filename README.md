@@ -10,7 +10,6 @@ Welcome to the Xuyutech Legal Documents repository. This centralized hub stores 
 - [Terms of Service](#terms-of-service)
 - [Frequently Asked Questions](#frequently-asked-questions)
 - [Documentation](#additional-documentation)
-- [How to Contribute](#how-to-contribute)
 
 ## Repository Structure
 
@@ -94,22 +93,6 @@ The `docs/` directory contains supplementary materials:
 products/ → Subs Manager iOS/ → privacy-policy/ → us/ → en.md
 ```
 
-## How to Contribute
-
-We welcome contributions from the community. Please follow these guidelines:
-
-1. **Fork this repository** and create a feature branch
-2. **Make your changes** following our [document structure](#repository-structure)
-3. **Submit a Pull Request** with a clear description of your updates
-4. **Ensure compliance**: All changes must be reviewed by at least one team member
-
-### Contribution Requirements
-
-- Follow the [document naming conventions](#language-support)
-- Include both English and local language versions when adding new regions
-- Update the relevant documentation in `docs/` if needed
-- Provide detailed commit messages explaining your changes
-
 ## Legal Compliance
 
 This repository maintains legal documents compliant with:
@@ -125,8 +108,7 @@ For detailed compliance information, see [docs/compliance.md](docs/compliance.md
 
 For questions about our legal documents or to report issues, please contact:
 
-- **Email**: [legal@xuyutech.com](mailto:legal@xuyutech.com)
-- **Issues**: Submit via GitHub Issues
+- **Email**: [datachewer@gmail.com](mailto:datachewer@gmail.com)
 
 ## License
 
