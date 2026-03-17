@@ -62,7 +62,6 @@
     }
 
     .hero,
-    .panel,
     .tab-panel {
       border: 1px solid var(--line);
       border-radius: 28px;
@@ -72,24 +71,10 @@
     }
 
     .hero {
-      position: relative;
-      overflow: hidden;
-      padding: 38px;
-      background: linear-gradient(145deg, rgba(255, 248, 240, 0.95), rgba(245, 235, 220, 0.85));
+      padding: 18px 22px;
+      background: rgba(255, 251, 245, 0.78);
     }
 
-    .hero::after {
-      content: "";
-      position: absolute;
-      right: -80px;
-      bottom: -100px;
-      width: 280px;
-      height: 280px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(184, 95, 52, 0.25), transparent 70%);
-    }
-
-    .eyebrow,
     .chip {
       display: inline-flex;
       align-items: center;
@@ -101,12 +86,6 @@
       text-transform: uppercase;
     }
 
-    .eyebrow {
-      border: 1px solid rgba(184, 95, 52, 0.18);
-      background: rgba(255, 255, 255, 0.54);
-      color: var(--accent-deep);
-    }
-
     h1,
     h2,
     h3,
@@ -115,27 +94,11 @@
       margin: 0;
     }
 
-    h1 {
-      max-width: 11ch;
-      margin-top: 18px;
-      font-size: clamp(2.8rem, 8vw, 5rem);
-      line-height: 0.98;
-      letter-spacing: -0.04em;
-    }
-
-    .lead {
-      max-width: 720px;
-      margin-top: 18px;
-      color: var(--muted);
-      font-size: 1.08rem;
-    }
-
     .hero-tools {
       display: grid;
       grid-template-columns: minmax(0, 1fr) auto;
-      gap: 16px;
-      margin-top: 26px;
-      align-items: start;
+      gap: 12px;
+      align-items: center;
     }
 
     .region-switch {
@@ -156,14 +119,6 @@
       border-color: rgba(184, 95, 52, 0.22);
       color: #fffaf3;
       background: linear-gradient(135deg, var(--accent), var(--accent-deep));
-    }
-
-    .toolbar {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 16px;
-      margin-top: 20px;
-      align-items: center;
     }
 
     .tabs {
@@ -197,16 +152,6 @@
       color: #fffaf3;
       background: linear-gradient(135deg, var(--accent), var(--accent-deep));
       box-shadow: 0 14px 30px rgba(139, 65, 29, 0.18);
-    }
-
-    .panel {
-      padding: 18px 22px;
-      color: var(--muted);
-      background: rgba(255, 251, 245, 0.72);
-    }
-
-    .panel strong {
-      color: var(--ink);
     }
 
     .tab-panel {
@@ -330,11 +275,10 @@
     @media (max-width: 900px) {
       .hero,
       .tab-panel {
-        padding: 26px;
+        padding: 20px;
       }
 
       .hero-tools,
-      .toolbar,
       .section-head,
       .grid {
         grid-template-columns: 1fr;
@@ -351,15 +295,10 @@
       }
 
       .hero,
-      .panel,
       .tab-panel,
       .info-card,
       .policy-block {
         border-radius: 20px;
-      }
-
-      h1 {
-        max-width: none;
       }
     }
   </style>
@@ -367,14 +306,6 @@
 <body>
   <main class="shell">
     <section class="hero">
-      <div class="eyebrow">SubSnap US / International</div>
-      <h1>Support and legal documents in one review-ready page.</h1>
-      <p class="lead">
-        This regional page contains Support, Privacy Policy, and Terms of Service
-        for direct review. Each tab has a stable URL via <strong>?tab=</strong>
-        and hash navigation.
-      </p>
-
       <div class="hero-tools">
         <div class="tabs" aria-label="Primary tabs">
           <a class="tab-link" data-tab-link="support" href="?tab=support#support">Support</a>
@@ -384,17 +315,10 @@
 
         <div class="region-switch" aria-label="Region switcher">
           <a class="chip active" href="./?tab=support#support">US</a>
-          <a class="chip" data-region-link="../CN/">CN</a>
+          <a class="chip" href="../CN/?tab=support#support" data-region-link="../CN/">CN</a>
         </div>
       </div>
     </section>
-
-    <div class="panel" style="margin-top: 20px;">
-      <strong>Review URLs:</strong>
-      Use region-specific links such as
-      <a href="?tab=privacy#privacy">US Privacy</a> or
-      <a href="?tab=terms#terms">US Terms</a>. The region switch preserves the current tab.
-    </div>
 
     <section class="tab-panel" id="panel-support" data-tab-panel="support">
       <div class="section-head">
