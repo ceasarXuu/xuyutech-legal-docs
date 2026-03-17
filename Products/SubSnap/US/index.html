@@ -1,0 +1,675 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SubSnap US Legal Center</title>
+  <style>
+    :root {
+      --bg: #f5efe7;
+      --surface: rgba(255, 251, 245, 0.84);
+      --surface-strong: #fffaf4;
+      --ink: #241913;
+      --muted: #6d6057;
+      --line: rgba(60, 40, 27, 0.12);
+      --accent: #b85f34;
+      --accent-deep: #8b411d;
+      --success: #556f49;
+      --shadow: 0 24px 80px rgba(64, 40, 21, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      padding: 24px 16px 40px;
+      color: var(--ink);
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: 1.7;
+      background:
+        radial-gradient(circle at top left, rgba(184, 95, 52, 0.18), transparent 34%),
+        radial-gradient(circle at bottom right, rgba(117, 136, 95, 0.14), transparent 30%),
+        linear-gradient(180deg, #faf4eb 0%, var(--bg) 60%, #efe2d2 100%);
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.25;
+      background-image:
+        linear-gradient(rgba(70, 49, 34, 0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(70, 49, 34, 0.06) 1px, transparent 1px);
+      background-size: 34px 34px;
+      mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.75), transparent 92%);
+    }
+
+    a {
+      color: var(--accent-deep);
+    }
+
+    .shell {
+      width: min(1120px, 100%);
+      margin: 0 auto;
+    }
+
+    .hero,
+    .panel,
+    .tab-panel {
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      background: var(--surface);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(8px);
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 38px;
+      background: linear-gradient(145deg, rgba(255, 248, 240, 0.95), rgba(245, 235, 220, 0.85));
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      right: -80px;
+      bottom: -100px;
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(184, 95, 52, 0.25), transparent 70%);
+    }
+
+    .eyebrow,
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: 12px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow {
+      border: 1px solid rgba(184, 95, 52, 0.18);
+      background: rgba(255, 255, 255, 0.54);
+      color: var(--accent-deep);
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    p {
+      margin: 0;
+    }
+
+    h1 {
+      max-width: 11ch;
+      margin-top: 18px;
+      font-size: clamp(2.8rem, 8vw, 5rem);
+      line-height: 0.98;
+      letter-spacing: -0.04em;
+    }
+
+    .lead {
+      max-width: 720px;
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: 1.08rem;
+    }
+
+    .hero-tools {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 16px;
+      margin-top: 26px;
+      align-items: start;
+    }
+
+    .region-switch {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: flex-end;
+    }
+
+    .chip {
+      border: 1px solid rgba(60, 40, 27, 0.1);
+      color: var(--ink);
+      text-decoration: none;
+      background: rgba(255, 255, 255, 0.56);
+    }
+
+    .chip.active {
+      border-color: rgba(184, 95, 52, 0.22);
+      color: #fffaf3;
+      background: linear-gradient(135deg, var(--accent), var(--accent-deep));
+    }
+
+    .toolbar {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 16px;
+      margin-top: 20px;
+      align-items: center;
+    }
+
+    .tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .tab-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 18px;
+      border: 1px solid rgba(60, 40, 27, 0.1);
+      border-radius: 999px;
+      color: var(--ink);
+      text-decoration: none;
+      background: rgba(255, 255, 255, 0.56);
+      transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+    }
+
+    .tab-link:hover,
+    .tab-link:focus-visible {
+      transform: translateY(-1px);
+      border-color: rgba(184, 95, 52, 0.28);
+      box-shadow: 0 12px 24px rgba(139, 65, 29, 0.12);
+    }
+
+    .tab-link.active {
+      border-color: rgba(184, 95, 52, 0.24);
+      color: #fffaf3;
+      background: linear-gradient(135deg, var(--accent), var(--accent-deep));
+      box-shadow: 0 14px 30px rgba(139, 65, 29, 0.18);
+    }
+
+    .panel {
+      padding: 18px 22px;
+      color: var(--muted);
+      background: rgba(255, 251, 245, 0.72);
+    }
+
+    .panel strong {
+      color: var(--ink);
+    }
+
+    .tab-panel {
+      margin-top: 20px;
+      padding: 34px;
+      background: rgba(255, 251, 245, 0.72);
+    }
+
+    .tab-panel[hidden] {
+      display: none;
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 16px;
+      align-items: end;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section-head h2 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      line-height: 1.02;
+      letter-spacing: -0.04em;
+    }
+
+    .section-subtitle {
+      margin-top: 10px;
+      color: var(--muted);
+    }
+
+    .url-card {
+      padding: 14px 16px;
+      border-radius: 18px;
+      background: rgba(184, 95, 52, 0.08);
+      color: var(--muted);
+      font-size: 0.92rem;
+      word-break: break-all;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 24px;
+    }
+
+    .info-card {
+      padding: 22px;
+      border: 1px solid rgba(60, 40, 27, 0.1);
+      border-radius: 22px;
+      background: rgba(255, 255, 255, 0.58);
+    }
+
+    .info-card h3 {
+      font-size: 1.15rem;
+    }
+
+    .info-card p,
+    .info-card ul {
+      margin-top: 12px;
+      color: var(--muted);
+    }
+
+    .info-card ul,
+    .policy-body ul {
+      padding-left: 20px;
+    }
+
+    .mail-link {
+      color: var(--accent-deep);
+      font-size: 1.1rem;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 0.18em;
+      word-break: break-word;
+    }
+
+    .badge {
+      display: inline-flex;
+      margin-top: 14px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      color: #f8f3ed;
+      background: linear-gradient(135deg, var(--success), #3f5733);
+      font-size: 0.94rem;
+    }
+
+    .policy-body {
+      display: grid;
+      gap: 22px;
+      margin-top: 24px;
+    }
+
+    .policy-block {
+      padding: 22px 24px;
+      border: 1px solid rgba(60, 40, 27, 0.1);
+      border-radius: 22px;
+      background: rgba(255, 255, 255, 0.58);
+    }
+
+    .policy-block h3 {
+      font-size: 1.2rem;
+    }
+
+    .policy-block h4 {
+      margin-top: 16px;
+      font-size: 1rem;
+    }
+
+    .policy-block p,
+    .policy-block ul {
+      margin-top: 10px;
+      color: var(--muted);
+    }
+
+    .policy-block strong {
+      color: var(--ink);
+    }
+
+    @media (max-width: 900px) {
+      .hero,
+      .tab-panel {
+        padding: 26px;
+      }
+
+      .hero-tools,
+      .toolbar,
+      .section-head,
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .region-switch {
+        justify-content: flex-start;
+      }
+    }
+
+    @media (max-width: 560px) {
+      body {
+        padding: 12px 10px 24px;
+      }
+
+      .hero,
+      .panel,
+      .tab-panel,
+      .info-card,
+      .policy-block {
+        border-radius: 20px;
+      }
+
+      h1 {
+        max-width: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <section class="hero">
+      <div class="eyebrow">SubSnap US / International</div>
+      <h1>Support and legal documents in one review-ready page.</h1>
+      <p class="lead">
+        This regional page contains Support, Privacy Policy, and Terms of Service
+        for direct review. Each tab has a stable URL via <strong>?tab=</strong>
+        and hash navigation.
+      </p>
+
+      <div class="hero-tools">
+        <div class="tabs" aria-label="Primary tabs">
+          <a class="tab-link" data-tab-link="support" href="?tab=support#support">Support</a>
+          <a class="tab-link" data-tab-link="privacy" href="?tab=privacy#privacy">Privacy Policy</a>
+          <a class="tab-link" data-tab-link="terms" href="?tab=terms#terms">Terms of Service</a>
+        </div>
+
+        <div class="region-switch" aria-label="Region switcher">
+          <a class="chip active" href="./?tab=support#support">US</a>
+          <a class="chip" data-region-link="../CN/">CN</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="panel" style="margin-top: 20px;">
+      <strong>Review URLs:</strong>
+      Use region-specific links such as
+      <a href="?tab=privacy#privacy">US Privacy</a> or
+      <a href="?tab=terms#terms">US Terms</a>. The region switch preserves the current tab.
+    </div>
+
+    <section class="tab-panel" id="panel-support" data-tab-panel="support">
+      <div class="section-head">
+        <div>
+          <h2>Support</h2>
+          <p class="section-subtitle">
+            Help with billing, OCR import, purchase restore, sync issues, and feature requests.
+          </p>
+        </div>
+        <div class="url-card">Direct URL: /Products/SubSnap/US/?tab=support#support</div>
+      </div>
+
+      <div class="grid">
+        <article class="info-card">
+          <h3>Contact</h3>
+          <p><a class="mail-link" href="mailto:775858285@qq.com">775858285@qq.com</a></p>
+          <div class="badge">Usually replies within 3 business days</div>
+          <p>
+            Legal and privacy requests can also be sent to
+            <a href="mailto:xuyutechnologies@outlook.com">xuyutechnologies@outlook.com</a>.
+          </p>
+        </article>
+
+        <article class="info-card">
+          <h3>What to include</h3>
+          <ul>
+            <li>Device model and iOS version</li>
+            <li>Short description of what happened</li>
+            <li>Whether the issue is billing, sync, OCR, or reminders</li>
+            <li>Any screenshots that help explain the issue</li>
+          </ul>
+        </article>
+
+        <article class="info-card">
+          <h3>What we can help with</h3>
+          <ul>
+            <li>Subscription and billing questions</li>
+            <li>Restore purchases</li>
+            <li>OCR import issues</li>
+            <li>iCloud backup or sync issues</li>
+            <li>Bug reports and feature requests</li>
+          </ul>
+        </article>
+
+        <article class="info-card">
+          <h3>Related review links</h3>
+          <ul>
+            <li><a href="?tab=privacy#privacy">Privacy Policy</a></li>
+            <li><a href="?tab=terms#terms">Terms of Service</a></li>
+            <li><a href="../">Back to region selector</a></li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="tab-panel" id="panel-privacy" data-tab-panel="privacy" hidden>
+      <div class="section-head">
+        <div>
+          <h2>Privacy Policy</h2>
+          <p class="section-subtitle">Last Updated: January 28, 2026</p>
+        </div>
+        <div class="url-card">Direct URL: /Products/SubSnap/US/?tab=privacy#privacy</div>
+      </div>
+
+      <div class="policy-body">
+        <article class="policy-block">
+          <h3>1. Introduction</h3>
+          <p>
+            SubSnap is operated by an individual developer. This Privacy Policy
+            explains how we collect, use, disclose, and safeguard information when
+            you use the SubSnap mobile application and related services.
+          </p>
+          <p>
+            By using the Service, you acknowledge that you have read and agreed to
+            this Privacy Policy. We may update this policy by revising the last
+            updated date and posting the revised version in the Service.
+          </p>
+        </article>
+
+        <article class="policy-block">
+          <h3>2. Information We Collect</h3>
+          <h4>2.1 Information you provide directly</h4>
+          <ul>
+            <li>Subscription names, billing amounts, billing cycles, and related subscription metadata</li>
+            <li>Screenshots or photos used for OCR import</li>
+            <li>Language, theme, reminder, and currency settings</li>
+            <li>Reminder schedules and APNs device token if notifications are enabled</li>
+            <li>App Store receipt data and transaction metadata for purchase verification</li>
+            <li>Backup snapshots of subscription, reminder, and expense data</li>
+          </ul>
+          <h4>2.2 Information collected automatically</h4>
+          <ul>
+            <li>A randomly generated device ID used for backup, restore, and notifications</li>
+            <li>Basic service logs such as request IDs, timestamps, and response status codes</li>
+            <li>Infrastructure-level network metadata for security and reliability</li>
+          </ul>
+          <p>We do not use third-party analytics SDKs.</p>
+        </article>
+
+        <article class="policy-block">
+          <h3>3. Third-Party Processing and Use of Data</h3>
+          <p>We use your information to provide and maintain the Service, process OCR requests, enable backup and restore, send notifications, verify purchases, and protect against abuse or security incidents.</p>
+          <ul>
+            <li><strong>OCR providers:</strong> Ark API or OpenRouter may process images to extract subscription details.</li>
+            <li><strong>Apple:</strong> Purchases are processed through Apple and verified using receipt metadata.</li>
+            <li><strong>Infrastructure providers:</strong> Cloud services such as AWS may store encrypted snapshots and operate backend services.</li>
+            <li><strong>iCloud:</strong> Apple iCloud may be used if you enable iCloud backup.</li>
+          </ul>
+          <p>We do not sell personal data or use it for targeted advertising.</p>
+        </article>
+
+        <article class="policy-block">
+          <h3>4. Storage, Security, and Retention</h3>
+          <ul>
+            <li>Local data is stored on your device in a SQLite database.</li>
+            <li>Backup snapshots may be stored on our backend and encrypted when configured.</li>
+            <li>We use HTTPS/TLS, access controls, least-privilege policies, and encryption for stored snapshots.</li>
+            <li>Local data remains until you delete it; server snapshots may persist until replaced or deleted upon request.</li>
+            <li>OCR images are not retained by SubSnap after processing.</li>
+          </ul>
+          <p>No transmission or storage method is completely secure, and absolute security cannot be guaranteed.</p>
+        </article>
+
+        <article class="policy-block">
+          <h3>5. Your Rights and Regional Notices</h3>
+          <p>You may access, correct, or delete your data in the app, request a copy of your data, or withdraw consent by disabling features such as OCR or notifications.</p>
+          <p>Depending on your location, you may have additional rights under GDPR, CCPA/CPRA, PIPL, APPI, or PIPA. We do not knowingly collect personal information from children under the applicable age threshold.</p>
+        </article>
+
+        <article class="policy-block">
+          <h3>6. Contact</h3>
+          <p>
+            For questions about this Privacy Policy, contact
+            <a href="mailto:xuyutechnologies@outlook.com">xuyutechnologies@outlook.com</a>.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="tab-panel" id="panel-terms" data-tab-panel="terms" hidden>
+      <div class="section-head">
+        <div>
+          <h2>Terms of Service</h2>
+          <p class="section-subtitle">Last Updated: January 28, 2026</p>
+        </div>
+        <div class="url-card">Direct URL: /Products/SubSnap/US/?tab=terms#terms</div>
+      </div>
+
+      <div class="policy-body">
+        <article class="policy-block">
+          <h3>1. Agreement to Terms</h3>
+          <p>
+            These Terms constitute a legally binding agreement between you and
+            SubSnap regarding your use of the Service. By downloading, installing,
+            accessing, or using SubSnap, you agree to be bound by these Terms.
+          </p>
+        </article>
+
+        <article class="policy-block">
+          <h3>2. Eligibility and License</h3>
+          <ul>
+            <li>You must be at least 13 years old, or the applicable age of digital consent in your jurisdiction.</li>
+            <li>If you are under 18, you must have parental or guardian consent.</li>
+            <li>SubSnap grants you a limited, non-exclusive, non-transferable, revocable license for personal, non-commercial use.</li>
+          </ul>
+        </article>
+
+        <article class="policy-block">
+          <h3>3. Permitted and Prohibited Uses</h3>
+          <p>You may use SubSnap to track subscriptions, receive reminders, analyze expenses, backup and restore data, and extract data from images using OCR.</p>
+          <ul>
+            <li>Do not use the Service for illegal or unauthorized purposes.</li>
+            <li>Do not reverse engineer, derive source code, or circumvent security controls.</li>
+            <li>Do not use automation to scrape, overload, or attack the Service.</li>
+            <li>Do not upload malware or harmful content.</li>
+          </ul>
+        </article>
+
+        <article class="policy-block">
+          <h3>4. User Data, OCR, and Third-Party Services</h3>
+          <ul>
+            <li>Your subscription data is stored locally on your device.</li>
+            <li>Server backups may be used to enable restore and notifications.</li>
+            <li>OCR images are sent to our backend and then to third-party OCR providers for processing.</li>
+            <li>OCR results may contain errors, so you should verify extracted data.</li>
+            <li>Third-party services such as Apple, iCloud, AWS, and OCR providers are governed by their own terms and policies.</li>
+          </ul>
+        </article>
+
+        <article class="policy-block">
+          <h3>5. Fees, Disclaimers, and Liability</h3>
+          <ul>
+            <li>Optional paid features may include OCR, advanced reminders, cloud backup, and lifetime unlocks.</li>
+            <li>Subscriptions renew automatically unless canceled at least 24 hours before the current period ends.</li>
+            <li>Refunds are handled by Apple according to App Store policies.</li>
+            <li>The Service is provided "as is" and "as available" without warranties.</li>
+            <li>To the maximum extent permitted by law, total liability will not exceed the amount you paid for the Service, if any.</li>
+          </ul>
+        </article>
+
+        <article class="policy-block">
+          <h3>6. Governing Law, Disputes, and Contact</h3>
+          <p>These Terms are governed by the laws applicable in your jurisdiction, without regard to conflict of law rules. If you are located in the United States, disputes may be resolved by binding arbitration where permitted by law after informal resolution.</p>
+          <p>
+            Contact:
+            <a href="mailto:xuyutechnologies@outlook.com">xuyutechnologies@outlook.com</a>
+          </p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    (function () {
+      var tabs = ["support", "privacy", "terms"];
+
+      function resolveTab() {
+        var params = new URLSearchParams(window.location.search);
+        var queryTab = params.get("tab");
+        var hashTab = window.location.hash.replace("#", "");
+        if (tabs.indexOf(queryTab) !== -1) return queryTab;
+        if (tabs.indexOf(hashTab) !== -1) return hashTab;
+        return "support";
+      }
+
+      function syncRegionLinks(tab) {
+        document.querySelectorAll("[data-region-link]").forEach(function (link) {
+          var base = link.getAttribute("data-region-link");
+          link.href = base + "?tab=" + tab + "#" + tab;
+        });
+      }
+
+      function activateTab(tab, replace) {
+        if (tabs.indexOf(tab) === -1) tab = "support";
+
+        document.querySelectorAll("[data-tab-link]").forEach(function (link) {
+          var active = link.getAttribute("data-tab-link") === tab;
+          link.classList.toggle("active", active);
+          link.setAttribute("aria-current", active ? "page" : "false");
+        });
+
+        document.querySelectorAll("[data-tab-panel]").forEach(function (panel) {
+          panel.hidden = panel.getAttribute("data-tab-panel") !== tab;
+        });
+
+        syncRegionLinks(tab);
+
+        var url = new URL(window.location.href);
+        url.searchParams.set("tab", tab);
+        url.hash = tab;
+        if (replace) {
+          history.replaceState({ tab: tab }, "", url.toString());
+        } else {
+          history.pushState({ tab: tab }, "", url.toString());
+        }
+      }
+
+      var initialTab = resolveTab();
+      activateTab(initialTab, true);
+
+      document.querySelectorAll("[data-tab-link]").forEach(function (link) {
+        link.addEventListener("click", function (event) {
+          event.preventDefault();
+          activateTab(link.getAttribute("data-tab-link"), false);
+        });
+      });
+
+      window.addEventListener("popstate", function () {
+        activateTab(resolveTab(), true);
+      });
+
+      window.addEventListener("hashchange", function () {
+        activateTab(resolveTab(), true);
+      });
+    })();
+  </script>
+</body>
+</html>

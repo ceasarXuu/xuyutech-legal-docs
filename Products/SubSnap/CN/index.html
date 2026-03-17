@@ -1,0 +1,681 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SubSnap CN 法律中心</title>
+  <style>
+    :root {
+      --bg: #f4eee6;
+      --surface: rgba(255, 251, 245, 0.84);
+      --surface-strong: #fffaf4;
+      --ink: #231912;
+      --muted: #6a5e55;
+      --line: rgba(60, 40, 27, 0.12);
+      --accent: #b95a2d;
+      --accent-deep: #8b3f1a;
+      --success: #4f6c46;
+      --shadow: 0 24px 80px rgba(64, 40, 21, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      padding: 24px 16px 40px;
+      color: var(--ink);
+      font-family: "Songti SC", "Noto Serif SC", "Source Han Serif SC", serif;
+      line-height: 1.8;
+      background:
+        radial-gradient(circle at top left, rgba(185, 90, 45, 0.18), transparent 34%),
+        radial-gradient(circle at bottom right, rgba(111, 136, 94, 0.14), transparent 30%),
+        linear-gradient(180deg, #faf4eb 0%, var(--bg) 60%, #efe2d2 100%);
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.24;
+      background-image:
+        linear-gradient(rgba(70, 49, 34, 0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(70, 49, 34, 0.06) 1px, transparent 1px);
+      background-size: 34px 34px;
+      mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.75), transparent 92%);
+    }
+
+    a {
+      color: var(--accent-deep);
+    }
+
+    .shell {
+      width: min(1120px, 100%);
+      margin: 0 auto;
+    }
+
+    .hero,
+    .panel,
+    .tab-panel {
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      background: var(--surface);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(8px);
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 38px;
+      background: linear-gradient(145deg, rgba(255, 248, 240, 0.95), rgba(245, 235, 220, 0.85));
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      right: -80px;
+      bottom: -100px;
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(185, 90, 45, 0.25), transparent 70%);
+    }
+
+    .eyebrow,
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: 12px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow {
+      border: 1px solid rgba(185, 90, 45, 0.18);
+      background: rgba(255, 255, 255, 0.54);
+      color: var(--accent-deep);
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    p {
+      margin: 0;
+    }
+
+    h1 {
+      max-width: 8ch;
+      margin-top: 18px;
+      font-size: clamp(2.7rem, 8vw, 4.8rem);
+      line-height: 1.02;
+      letter-spacing: -0.04em;
+    }
+
+    .lead {
+      max-width: 720px;
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: 1.04rem;
+    }
+
+    .hero-tools {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 16px;
+      margin-top: 26px;
+      align-items: start;
+    }
+
+    .region-switch {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: flex-end;
+    }
+
+    .chip {
+      border: 1px solid rgba(60, 40, 27, 0.1);
+      color: var(--ink);
+      text-decoration: none;
+      background: rgba(255, 255, 255, 0.56);
+    }
+
+    .chip.active {
+      border-color: rgba(185, 90, 45, 0.22);
+      color: #fffaf3;
+      background: linear-gradient(135deg, var(--accent), var(--accent-deep));
+    }
+
+    .toolbar {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 16px;
+      margin-top: 20px;
+      align-items: center;
+    }
+
+    .tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .tab-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 18px;
+      border: 1px solid rgba(60, 40, 27, 0.1);
+      border-radius: 999px;
+      color: var(--ink);
+      text-decoration: none;
+      background: rgba(255, 255, 255, 0.56);
+      transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+    }
+
+    .tab-link:hover,
+    .tab-link:focus-visible {
+      transform: translateY(-1px);
+      border-color: rgba(185, 90, 45, 0.28);
+      box-shadow: 0 12px 24px rgba(139, 63, 26, 0.12);
+    }
+
+    .tab-link.active {
+      border-color: rgba(185, 90, 45, 0.24);
+      color: #fffaf3;
+      background: linear-gradient(135deg, var(--accent), var(--accent-deep));
+      box-shadow: 0 14px 30px rgba(139, 63, 26, 0.18);
+    }
+
+    .panel {
+      padding: 18px 22px;
+      color: var(--muted);
+      background: rgba(255, 251, 245, 0.72);
+    }
+
+    .panel strong {
+      color: var(--ink);
+    }
+
+    .tab-panel {
+      margin-top: 20px;
+      padding: 34px;
+      background: rgba(255, 251, 245, 0.72);
+    }
+
+    .tab-panel[hidden] {
+      display: none;
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 16px;
+      align-items: end;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section-head h2 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      line-height: 1.05;
+      letter-spacing: -0.04em;
+    }
+
+    .section-subtitle {
+      margin-top: 10px;
+      color: var(--muted);
+    }
+
+    .url-card {
+      padding: 14px 16px;
+      border-radius: 18px;
+      background: rgba(185, 90, 45, 0.08);
+      color: var(--muted);
+      font-size: 0.92rem;
+      word-break: break-all;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 24px;
+    }
+
+    .info-card {
+      padding: 22px;
+      border: 1px solid rgba(60, 40, 27, 0.1);
+      border-radius: 22px;
+      background: rgba(255, 255, 255, 0.58);
+    }
+
+    .info-card h3 {
+      font-size: 1.15rem;
+    }
+
+    .info-card p,
+    .info-card ul {
+      margin-top: 12px;
+      color: var(--muted);
+    }
+
+    .info-card ul,
+    .policy-body ul {
+      padding-left: 20px;
+    }
+
+    .mail-link {
+      color: var(--accent-deep);
+      font-size: 1.1rem;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 0.18em;
+      word-break: break-word;
+    }
+
+    .badge {
+      display: inline-flex;
+      margin-top: 14px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      color: #f8f3ed;
+      background: linear-gradient(135deg, var(--success), #395437);
+      font-size: 0.94rem;
+    }
+
+    .policy-body {
+      display: grid;
+      gap: 22px;
+      margin-top: 24px;
+    }
+
+    .policy-block {
+      padding: 22px 24px;
+      border: 1px solid rgba(60, 40, 27, 0.1);
+      border-radius: 22px;
+      background: rgba(255, 255, 255, 0.58);
+    }
+
+    .policy-block h3 {
+      font-size: 1.2rem;
+    }
+
+    .policy-block h4 {
+      margin-top: 16px;
+      font-size: 1rem;
+    }
+
+    .policy-block p,
+    .policy-block ul {
+      margin-top: 10px;
+      color: var(--muted);
+    }
+
+    .policy-block strong {
+      color: var(--ink);
+    }
+
+    @media (max-width: 900px) {
+      .hero,
+      .tab-panel {
+        padding: 26px;
+      }
+
+      .hero-tools,
+      .toolbar,
+      .section-head,
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .region-switch {
+        justify-content: flex-start;
+      }
+    }
+
+    @media (max-width: 560px) {
+      body {
+        padding: 12px 10px 24px;
+      }
+
+      .hero,
+      .panel,
+      .tab-panel,
+      .info-card,
+      .policy-block {
+        border-radius: 20px;
+      }
+
+      h1 {
+        max-width: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <section class="hero">
+      <div class="eyebrow">SubSnap CN / 中国大陆</div>
+      <h1>支持、隐私协议与服务声明集中承载。</h1>
+      <p class="lead">
+        这个地区页把支持说明、隐私协议和服务声明放在同一个 GitHub Pages 页面里，
+        同时保留每个 tab 的直达 URL，适合审核提交和用户访问。
+      </p>
+
+      <div class="hero-tools">
+        <div class="tabs" aria-label="主导航">
+          <a class="tab-link" data-tab-link="support" href="?tab=support#support">支持</a>
+          <a class="tab-link" data-tab-link="privacy" href="?tab=privacy#privacy">隐私协议</a>
+          <a class="tab-link" data-tab-link="terms" href="?tab=terms#terms">服务声明</a>
+        </div>
+
+        <div class="region-switch" aria-label="地区切换">
+          <a class="chip active" href="./?tab=support#support">CN</a>
+          <a class="chip" data-region-link="../US/">US</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="panel" style="margin-top: 20px;">
+      <strong>审核 URL：</strong>
+      可直接提交
+      <a href="?tab=privacy#privacy">CN 隐私协议</a>
+      或
+      <a href="?tab=terms#terms">CN 服务声明</a>。
+      地区切换会自动保留当前 tab。
+    </div>
+
+    <section class="tab-panel" id="panel-support" data-tab-panel="support">
+      <div class="section-head">
+        <div>
+          <h2>支持</h2>
+          <p class="section-subtitle">
+            处理订阅计费、OCR 导入、恢复购买、同步异常、功能建议等问题。
+          </p>
+        </div>
+        <div class="url-card">直达 URL：/Products/SubSnap/CN/?tab=support#support</div>
+      </div>
+
+      <div class="grid">
+        <article class="info-card">
+          <h3>联系方式</h3>
+          <p><a class="mail-link" href="mailto:775858285@qq.com">775858285@qq.com</a></p>
+          <div class="badge">通常会在 3 个工作日内回复</div>
+          <p>
+            隐私、法律相关问题也可以发送到
+            <a href="mailto:xuyutechnologies@outlook.com">xuyutechnologies@outlook.com</a>。
+          </p>
+        </article>
+
+        <article class="info-card">
+          <h3>建议邮件里提供</h3>
+          <ul>
+            <li>设备型号与 iOS 版本</li>
+            <li>问题发生时的简要描述</li>
+            <li>是计费、同步、OCR 还是提醒问题</li>
+            <li>必要时附上能说明问题的截图</li>
+          </ul>
+        </article>
+
+        <article class="info-card">
+          <h3>我们可以协助的范围</h3>
+          <ul>
+            <li>订阅与计费问题</li>
+            <li>恢复购买</li>
+            <li>OCR 导入异常</li>
+            <li>iCloud 备份或同步异常</li>
+            <li>Bug 反馈与功能建议</li>
+          </ul>
+        </article>
+
+        <article class="info-card">
+          <h3>相关直达链接</h3>
+          <ul>
+            <li><a href="?tab=privacy#privacy">隐私协议</a></li>
+            <li><a href="?tab=terms#terms">服务声明</a></li>
+            <li><a href="../">返回地区选择页</a></li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="tab-panel" id="panel-privacy" data-tab-panel="privacy" hidden>
+      <div class="section-head">
+        <div>
+          <h2>隐私协议</h2>
+          <p class="section-subtitle">更新日期：2026年1月28日</p>
+        </div>
+        <div class="url-card">直达 URL：/Products/SubSnap/CN/?tab=privacy#privacy</div>
+      </div>
+
+      <div class="policy-body">
+        <article class="policy-block">
+          <h3>1. 适用范围</h3>
+          <p>
+            本隐私政策适用于 SubSnap 应用及相关服务。我们作为个人开发者运营本服务，
+            并遵守《个人信息保护法》《网络安全法》《数据安全法》等适用法律法规。
+          </p>
+          <p>
+            在使用服务前，请仔细阅读本政策。若您不同意本政策，请停止使用服务。
+            您继续使用服务即视为已阅读并同意本政策。
+          </p>
+        </article>
+
+        <article class="policy-block">
+          <h3>2. 我们处理的信息及目的</h3>
+          <h4>2.1 订阅管理与统计</h4>
+          <ul>
+            <li>订阅名称、服务提供方、金额、币种、周期、续费日期、分类、支付方式等</li>
+            <li>用途：展示和管理订阅、续费提醒、统计分析</li>
+          </ul>
+          <h4>2.2 OCR 图片识别</h4>
+          <ul>
+            <li>您主动上传的订阅确认页、账单或收据截图/照片</li>
+            <li>用途：识别并提取订阅信息，辅助自动填写</li>
+          </ul>
+          <h4>2.3 通知、购买验证与备份恢复</h4>
+          <ul>
+            <li>提醒计划、iOS 推送 token、App Store 收据信息</li>
+            <li>订阅与提醒数据快照，以及随机生成的设备 ID</li>
+          </ul>
+          <h4>2.4 运维与安全</h4>
+          <ul>
+            <li>请求 ID、时间戳、响应状态码等基础日志，以及必要网络元数据</li>
+            <li>用途：运行维护、安全审计、故障排查和防滥用</li>
+          </ul>
+          <p>我们不使用第三方行为追踪或广告分析 SDK，也不会将您的信息用于广告投放。</p>
+        </article>
+
+        <article class="policy-block">
+          <h3>3. 敏感信息、共享与委托处理</h3>
+          <p>
+            OCR 图片可能包含账单或付款信息，属于可能涉及财务信息的敏感个人信息。
+            仅在您主动使用 OCR 功能时处理。
+          </p>
+          <ul>
+            <li><strong>OCR 服务商：</strong>Ark API / OpenRouter，仅用于图片识别</li>
+            <li><strong>云基础设施：</strong>用于后端服务和数据存储，例如 AWS 或国内云服务</li>
+            <li><strong>Apple 服务：</strong>用于 App Store 购买验证和 iCloud 备份</li>
+          </ul>
+          <p>
+            我们不会出售个人信息，也不会在未经授权的情况下公开披露。
+            仅在法律要求、保护合法权益或防止欺诈和安全事件时共享必要信息。
+          </p>
+        </article>
+
+        <article class="policy-block">
+          <h3>4. 存储、保护与跨境说明</h3>
+          <ul>
+            <li>本地数据保存在您的设备中，主要使用 SQLite 存储。</li>
+            <li>服务器快照用于备份与恢复，可按配置启用加密存储。</li>
+            <li>我们使用 HTTPS/TLS、访问控制、最小权限原则等安全措施。</li>
+            <li>本地数据在您主动删除前保留；服务器快照会被新快照覆盖，或按请求删除。</li>
+            <li>当前服务不计划进行个人信息出境；如未来涉及跨境传输，将依法履行告知和同意义务。</li>
+          </ul>
+        </article>
+
+        <article class="policy-block">
+          <h3>5. 您的权利</h3>
+          <p>您可以访问、更正、删除个人信息，撤回同意，获取副本，或在适用情形下限制处理。</p>
+          <p>您可以通过应用内功能或邮件联系我们行使上述权利，我们会在合理期限内处理您的请求。</p>
+        </article>
+
+        <article class="policy-block">
+          <h3>6. 联系方式</h3>
+          <p>
+            如对本隐私政策有疑问、意见或投诉，请联系
+            <a href="mailto:xuyutechnologies@outlook.com">xuyutechnologies@outlook.com</a>。
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="tab-panel" id="panel-terms" data-tab-panel="terms" hidden>
+      <div class="section-head">
+        <div>
+          <h2>服务声明</h2>
+          <p class="section-subtitle">更新日期：2026年1月28日</p>
+        </div>
+        <div class="url-card">直达 URL：/Products/SubSnap/CN/?tab=terms#terms</div>
+      </div>
+
+      <div class="policy-body">
+        <article class="policy-block">
+          <h3>1. 协议说明</h3>
+          <p>
+            本协议由您与 SubSnap 就使用应用及相关服务所订立。您下载、安装或使用
+            服务，即表示已阅读并同意本协议全部内容。
+          </p>
+        </article>
+
+        <article class="policy-block">
+          <h3>2. 服务内容与使用资格</h3>
+          <ul>
+            <li>SubSnap 提供订阅管理、到期提醒、OCR 识别、费用统计、备份恢复等功能。</li>
+            <li>您需年满 13 周岁或所在地法律规定的最低年龄。</li>
+            <li>未满 18 周岁的用户应在监护人同意下使用；未满 14 周岁用户不得使用本服务。</li>
+            <li>SubSnap 不要求注册账号，您需自行妥善保管设备。</li>
+          </ul>
+        </article>
+
+        <article class="policy-block">
+          <h3>3. 用户行为规范</h3>
+          <ul>
+            <li>不得实施违法行为或侵害他人合法权益。</li>
+            <li>不得反向工程、破解、绕过安全机制。</li>
+            <li>不得以自动化方式恶意访问、攻击或影响服务稳定性。</li>
+            <li>不得上传恶意程序、病毒或其他有害内容。</li>
+          </ul>
+        </article>
+
+        <article class="policy-block">
+          <h3>4. 付费、隐私与知识产权</h3>
+          <ul>
+            <li>SubSnap 提供自动续订订阅和一次性购买选项。</li>
+            <li>订阅到期前 24 小时内未取消将自动续订，费用由 Apple App Store 收取。</li>
+            <li>退款由 Apple 按其政策处理，我们无法直接退款。</li>
+            <li>您的个人信息会按照《隐私协议》处理。</li>
+            <li>软件、界面、文字和图标等内容受知识产权保护；您上传的内容归您所有，但授权我们为提供服务进行必要处理。</li>
+          </ul>
+        </article>
+
+        <article class="policy-block">
+          <h3>5. 服务变更、免责与争议解决</h3>
+          <ul>
+            <li>我们可基于运营需要调整、暂停或终止服务，重大变更会以合理方式告知。</li>
+            <li>SubSnap 按“现状”提供，不保证 OCR、提醒或统计结果完全准确。</li>
+            <li>在法律允许范围内，我们不对间接、附带或衍生损失承担责任。</li>
+            <li>如需承担责任，赔偿总额不超过您已为服务支付的费用。</li>
+            <li>本协议适用中华人民共和国法律，争议应先协商解决，协商不成提交有管辖权的人民法院。</li>
+          </ul>
+        </article>
+
+        <article class="policy-block">
+          <h3>6. 联系方式</h3>
+          <p>
+            如需帮助或提出问题，请联系
+            <a href="mailto:xuyutechnologies@outlook.com">xuyutechnologies@outlook.com</a>。
+          </p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    (function () {
+      var tabs = ["support", "privacy", "terms"];
+
+      function resolveTab() {
+        var params = new URLSearchParams(window.location.search);
+        var queryTab = params.get("tab");
+        var hashTab = window.location.hash.replace("#", "");
+        if (tabs.indexOf(queryTab) !== -1) return queryTab;
+        if (tabs.indexOf(hashTab) !== -1) return hashTab;
+        return "support";
+      }
+
+      function syncRegionLinks(tab) {
+        document.querySelectorAll("[data-region-link]").forEach(function (link) {
+          var base = link.getAttribute("data-region-link");
+          link.href = base + "?tab=" + tab + "#" + tab;
+        });
+      }
+
+      function activateTab(tab, replace) {
+        if (tabs.indexOf(tab) === -1) tab = "support";
+
+        document.querySelectorAll("[data-tab-link]").forEach(function (link) {
+          var active = link.getAttribute("data-tab-link") === tab;
+          link.classList.toggle("active", active);
+          link.setAttribute("aria-current", active ? "page" : "false");
+        });
+
+        document.querySelectorAll("[data-tab-panel]").forEach(function (panel) {
+          panel.hidden = panel.getAttribute("data-tab-panel") !== tab;
+        });
+
+        syncRegionLinks(tab);
+
+        var url = new URL(window.location.href);
+        url.searchParams.set("tab", tab);
+        url.hash = tab;
+        if (replace) {
+          history.replaceState({ tab: tab }, "", url.toString());
+        } else {
+          history.pushState({ tab: tab }, "", url.toString());
+        }
+      }
+
+      var initialTab = resolveTab();
+      activateTab(initialTab, true);
+
+      document.querySelectorAll("[data-tab-link]").forEach(function (link) {
+        link.addEventListener("click", function (event) {
+          event.preventDefault();
+          activateTab(link.getAttribute("data-tab-link"), false);
+        });
+      });
+
+      window.addEventListener("popstate", function () {
+        activateTab(resolveTab(), true);
+      });
+
+      window.addEventListener("hashchange", function () {
+        activateTab(resolveTab(), true);
+      });
+    })();
+  </script>
+</body>
+</html>
