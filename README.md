@@ -6,6 +6,8 @@ Welcome to the Xuyutech Legal Documents repository. This centralized hub stores 
 
 ## Quick Navigation
 
+- [Doumen Legal Center](Products/Doumen/)
+- [SubSnap Legal Center](Products/SubSnap/)
 - [Privacy Policies](#privacy-policies)
 - [Terms of Service](#terms-of-service)
 - [Frequently Asked Questions](#frequently-asked-questions)

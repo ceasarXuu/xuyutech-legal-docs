@@ -6,6 +6,8 @@
 
 ## 快速导航
 
+- [豆门 Doumen 法律中心](Products/Doumen/)
+- [SubSnap 法律中心](Products/SubSnap/)
 - [隐私政策](#隐私政策)
 - [服务条款](#服务条款)
 - [常见问题](#常见问题)

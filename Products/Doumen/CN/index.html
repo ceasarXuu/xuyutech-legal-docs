@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>豆门 Doumen 法律中心</title>
+  <style>
+    :root { --bg: #f4f7f1; --panel: #fff; --ink: #17201a; --muted: #5d675f; --line: #dce4dc; --accent: #4f7f63; }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; padding: 24px 16px 42px; color: var(--ink); background: linear-gradient(180deg, #fafcf8, var(--bg)); font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif; line-height: 1.78; }
+    main { width: min(980px, 100%); margin: 0 auto; }
+    header, section { border: 1px solid var(--line); border-radius: 8px; background: var(--panel); box-shadow: 0 16px 50px rgba(35, 58, 42, 0.08); }
+    header { padding: 18px 22px; }
+    section { margin-top: 18px; padding: 28px; }
+    h1, h2, h3, p { margin: 0; }
+    h1 { font-size: clamp(2rem, 6vw, 3.5rem); line-height: 1.08; }
+    h2 { font-size: clamp(1.7rem, 4vw, 2.5rem); }
+    h3 { margin-top: 22px; font-size: 1.08rem; }
+    p, ul { color: var(--muted); }
+    p, ul { margin-top: 10px; }
+    nav { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
+    a { color: var(--accent); text-underline-offset: 0.18em; }
+    nav a { padding: 9px 12px; border: 1px solid var(--line); border-radius: 999px; background: #f8fbf7; text-decoration: none; }
+    .meta { color: var(--muted); }
+    .mail { font-size: 1.1rem; }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>豆门 Doumen 法律中心</h1>
+      <p>生效日期：2026 年 5 月 13 日 · 开发者：Xuyu Tech</p>
+      <nav>
+        <a href="#support">支持</a>
+        <a href="#privacy">隐私政策</a>
+        <a href="#terms">服务条款</a>
+        <a href="../US/?tab=support#support">US</a>
+      </nav>
+    </header>
+
+    <section id="support">
+      <h2>支持</h2>
+      <p>如需支持，或有隐私与法律相关问题，请联系：</p>
+      <p><a class="mail" href="mailto:xuyutechnologies@outlook.com">xuyutechnologies@outlook.com</a></p>
+    </section>
+
+    <section id="privacy">
+      <h2>隐私政策</h2>
+      <p class="meta">豆门 Doumen 是一款本地优先的拼豆图纸生成和编辑工具。v0.1 核心功能无需注册、无需登录、无需上传图片即可使用。</p>
+      <h3>1. 我们收集的数据</h3>
+      <p>v0.1 默认不收集可识别个人身份的数据，不创建用户账号，不要求登录，也不将用户导入的图片、项目文件或导出图纸上传到服务器。如果你主动通过邮件联系我们，我们只会将你提供的信息用于处理反馈、支持请求或合规沟通。</p>
+      <h3>2. 图片和项目数据</h3>
+      <p>用户导入的图片用于在设备本地生成拼豆图纸。生成过程、编辑结果、项目草稿和导出文件默认保存在用户设备本地。PNG 导出提供可选项目元数据开关，并可进一步选择嵌入原图；如果你分享该 PNG，嵌入的数据也会随文件分享。</p>
+      <h3>3. 系统权限</h3>
+      <ul>
+        <li>系统照片选择器：用于选择图片，不请求完整相册读取权限。</li>
+        <li>相册写入权限：用于将导出的 PNG 图纸保存到相册。</li>
+        <li>文件访问或分享能力：用于导入图片、保存项目和导出文件。</li>
+      </ul>
+      <h3>4. 第三方服务</h3>
+      <p>豆门 v0.1 默认不包含广告 SDK、第三方统计 SDK、第三方追踪 SDK 或第三方账号登录。如果后续加入这些服务，本政策和 App Store 隐私信息将同步更新。</p>
+      <h3>5. 保留、删除和用户权利</h3>
+      <p>本地项目、导出文件和保存到相册的图片由用户在设备上管理。由于 v0.1 不提供账号系统和服务器存储，因此没有远程账号删除流程。</p>
+      <h3>6. 儿童隐私、版权和政策变更</h3>
+      <p>豆门面向一般手作和创作用途。我们不会故意收集儿童个人信息。用户需确保有权使用导入图片。如果后续加入联网服务，我们会按要求更新本政策。</p>
+    </section>
+
+    <section id="terms">
+      <h2>服务条款</h2>
+      <p class="meta">使用豆门即表示你同意本服务条款。</p>
+      <h3>1. 服务内容</h3>
+      <p>豆门 v0.1 提供本地图片生成拼豆图纸、常见拼豆色卡匹配、格子编辑、本地项目保存、PNG/PDF 图纸导出等能力。v0.1 不提供账号、云同步、社区发布、在线素材库或材料购买服务。</p>
+      <h3>2. 本地优先和用户责任</h3>
+      <p>豆门主要在设备本地处理图片和项目。你需要自行管理设备、项目文件、导出文件和备份，并确保有权使用导入的图片、图案或其他内容。不得将豆门用于处理、创建或传播违法、侵权或损害他人权利的内容。</p>
+      <h3>3. 色卡和用量统计</h3>
+      <p>色彩匹配、色号、色名和用量统计仅作为手作参考。屏幕显示、图片质量、算法、拼豆批次、光照和手动编辑都可能影响结果。购买材料或制作成品前，请结合实际材料核对。</p>
+      <h3>4. 知识产权和禁止行为</h3>
+      <p>豆门 App、界面、文档、代码、品牌和相关设计归开发者或相应权利人所有。你保留导入内容和自建项目的权利。不得滥用 App、破坏安全机制、侵犯第三方权利，或误导他人认为豆门与某个拼豆品牌或平台存在官方合作。</p>
+      <h3>5. 免责、变更和适用法律</h3>
+      <p>豆门按“现状”和“可用”提供。在法律允许的最大范围内，开发者不对间接损失、材料浪费、制作失败、数据丢失或其他后果性损失承担责任。本条款可能因产品、法律或平台要求更新；在法律允许范围内，适用开发者主要营业地或居住地法律。</p>
+    </section>
+  </main>
+</body>
+</html>

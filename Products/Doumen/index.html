@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Doumen Legal Center</title>
+  <style>
+    :root { color-scheme: light; --bg: #f4f7f1; --panel: #ffffff; --ink: #17201a; --muted: #5d675f; --line: #dce4dc; --accent: #4f7f63; }
+    * { box-sizing: border-box; }
+    body { margin: 0; min-height: 100vh; padding: 32px 18px; color: var(--ink); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: linear-gradient(180deg, #f9fbf7, var(--bg)); line-height: 1.65; }
+    main { width: min(920px, 100%); margin: 0 auto; }
+    header { padding: 28px 0 20px; }
+    h1 { margin: 0; font-size: clamp(2.2rem, 8vw, 4.5rem); line-height: 1; letter-spacing: 0; }
+    p { margin: 12px 0 0; color: var(--muted); }
+    .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; margin-top: 24px; }
+    section { border: 1px solid var(--line); border-radius: 8px; padding: 22px; background: var(--panel); box-shadow: 0 16px 50px rgba(35, 58, 42, 0.08); }
+    h2 { margin: 0; font-size: 1.4rem; }
+    nav { display: grid; gap: 10px; margin-top: 18px; }
+    a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 0.18em; }
+    .link { display: flex; justify-content: space-between; gap: 14px; padding: 12px 0; border-top: 1px solid var(--line); }
+    .url { color: var(--muted); font-size: 0.9rem; text-align: right; word-break: break-all; }
+    @media (max-width: 720px) { .grid { grid-template-columns: 1fr; } .link { display: block; } .url { margin-top: 4px; text-align: left; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Doumen Legal Center</h1>
+      <p>Public support, privacy policy, and terms pages for Doumen.</p>
+    </header>
+    <div class="grid">
+      <section>
+        <h2>US / English</h2>
+        <p>Use this page for English App Store metadata and global review links.</p>
+        <nav>
+          <a class="link" href="./US/?tab=support#support"><span>Support</span><span class="url">/Products/Doumen/US/?tab=support#support</span></a>
+          <a class="link" href="./US/?tab=privacy#privacy"><span>Privacy Policy</span><span class="url">/Products/Doumen/US/?tab=privacy#privacy</span></a>
+          <a class="link" href="./US/?tab=terms#terms"><span>Terms of Service</span><span class="url">/Products/Doumen/US/?tab=terms#terms</span></a>
+        </nav>
+      </section>
+      <section>
+        <h2>CN / 简体中文</h2>
+        <p>用于中国区提交、中文隐私政策和服务条款。</p>
+        <nav>
+          <a class="link" href="./CN/?tab=support#support"><span>支持</span><span class="url">/Products/Doumen/CN/?tab=support#support</span></a>
+          <a class="link" href="./CN/?tab=privacy#privacy"><span>隐私政策</span><span class="url">/Products/Doumen/CN/?tab=privacy#privacy</span></a>
+          <a class="link" href="./CN/?tab=terms#terms"><span>服务条款</span><span class="url">/Products/Doumen/CN/?tab=terms#terms</span></a>
+        </nav>
+      </section>
+    </div>
+  </main>
+</body>
+</html>
