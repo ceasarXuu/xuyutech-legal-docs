@@ -5,49 +5,298 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Doumen Legal Center</title>
   <style>
-    :root { color-scheme: light; --bg: #f4f7f1; --panel: #ffffff; --ink: #17201a; --muted: #5d675f; --line: #dce4dc; --accent: #4f7f63; }
-    * { box-sizing: border-box; }
-    body { margin: 0; min-height: 100vh; padding: 32px 18px; color: var(--ink); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: linear-gradient(180deg, #f9fbf7, var(--bg)); line-height: 1.65; }
-    main { width: min(920px, 100%); margin: 0 auto; }
-    header { padding: 28px 0 20px; }
-    h1 { margin: 0; font-size: clamp(2.2rem, 8vw, 4.5rem); line-height: 1; letter-spacing: 0; }
-    p { margin: 12px 0 0; color: var(--muted); }
-    .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; margin-top: 24px; }
-    section { border: 1px solid var(--line); border-radius: 8px; padding: 22px; background: var(--panel); box-shadow: 0 16px 50px rgba(35, 58, 42, 0.08); }
-    h2 { margin: 0; font-size: 1.4rem; }
-    nav { display: grid; gap: 10px; margin-top: 18px; }
-    a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 0.18em; }
-    .link { display: flex; justify-content: space-between; gap: 14px; padding: 12px 0; border-top: 1px solid var(--line); }
-    .url { color: var(--muted); font-size: 0.9rem; text-align: right; word-break: break-all; }
-    @media (max-width: 720px) { .grid { grid-template-columns: 1fr; } .link { display: block; } .url { margin-top: 4px; text-align: left; } }
+    :root {
+      --bg: #f5efe7;
+      --surface: rgba(255, 251, 245, 0.82);
+      --surface-strong: #fff9f2;
+      --ink: #241913;
+      --muted: #6d6057;
+      --line: rgba(60, 40, 27, 0.12);
+      --accent: #b85f34;
+      --accent-deep: #8b411d;
+      --shadow: 0 24px 80px rgba(64, 40, 21, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      padding: 28px 18px 48px;
+      color: var(--ink);
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: 1.6;
+      background:
+        radial-gradient(circle at top left, rgba(184, 95, 52, 0.18), transparent 34%),
+        radial-gradient(circle at bottom right, rgba(117, 136, 95, 0.14), transparent 30%),
+        linear-gradient(180deg, #faf4eb 0%, var(--bg) 60%, #efe2d2 100%);
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.25;
+      background-image:
+        linear-gradient(rgba(70, 49, 34, 0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(70, 49, 34, 0.06) 1px, transparent 1px);
+      background-size: 34px 34px;
+      mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.75), transparent 92%);
+    }
+
+    .shell {
+      width: min(1080px, 100%);
+      margin: 0 auto;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 42px;
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      background: linear-gradient(145deg, rgba(255, 248, 240, 0.95), rgba(245, 235, 220, 0.85));
+      box-shadow: var(--shadow);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      right: -80px;
+      bottom: -100px;
+      width: 260px;
+      height: 260px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(184, 95, 52, 0.24), transparent 70%);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      padding: 8px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(184, 95, 52, 0.18);
+      background: rgba(255, 255, 255, 0.52);
+      color: var(--accent-deep);
+      font-size: 12px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin: 0;
+    }
+
+    h1 {
+      max-width: 10ch;
+      margin-top: 18px;
+      font-size: clamp(3rem, 9vw, 5.4rem);
+      line-height: 0.98;
+      letter-spacing: -0.04em;
+    }
+
+    .lead {
+      max-width: 660px;
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: 1.08rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
+      margin-top: 24px;
+    }
+
+    .card {
+      padding: 28px;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      background: var(--surface);
+      box-shadow: 0 16px 46px rgba(58, 34, 18, 0.08);
+      backdrop-filter: blur(8px);
+    }
+
+    .region-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(184, 95, 52, 0.09);
+      color: var(--accent-deep);
+      font-size: 0.86rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .card h2 {
+      margin-top: 18px;
+      font-size: 2rem;
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+    }
+
+    .card p {
+      margin-top: 12px;
+      color: var(--muted);
+    }
+
+    .actions {
+      display: grid;
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .action {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      padding: 14px 16px;
+      border: 1px solid rgba(60, 40, 27, 0.1);
+      border-radius: 18px;
+      color: var(--ink);
+      text-decoration: none;
+      background: rgba(255, 255, 255, 0.58);
+      transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+    }
+
+    .action:hover,
+    .action:focus-visible {
+      transform: translateY(-1px);
+      border-color: rgba(184, 95, 52, 0.32);
+      box-shadow: 0 14px 30px rgba(139, 65, 29, 0.12);
+    }
+
+    .action-label {
+      font-weight: 600;
+    }
+
+    .action-url {
+      color: var(--muted);
+      font-size: 0.92rem;
+      text-align: right;
+      word-break: break-all;
+    }
+
+    .note {
+      margin-top: 24px;
+      padding: 18px 20px;
+      border-left: 3px solid var(--accent);
+      border-radius: 0 18px 18px 0;
+      color: var(--muted);
+      background: rgba(184, 95, 52, 0.08);
+    }
+
+    @media (max-width: 860px) {
+      .hero,
+      .card {
+        padding: 26px;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 560px) {
+      body {
+        padding: 14px 12px 28px;
+      }
+
+      .hero,
+      .card {
+        border-radius: 20px;
+      }
+
+      h1 {
+        max-width: none;
+      }
+
+      .action {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .action-url {
+        text-align: left;
+      }
+    }
   </style>
 </head>
 <body>
-  <main>
-    <header>
-      <h1>Doumen Legal Center</h1>
-      <p>Public support, privacy policy, and terms pages for Doumen.</p>
-    </header>
-    <div class="grid">
-      <section>
-        <h2>US / English</h2>
-        <p>Use this page for English App Store metadata and global review links.</p>
-        <nav>
-          <a class="link" href="./US/?tab=support#support"><span>Support</span><span class="url">/Products/Doumen/US/?tab=support#support</span></a>
-          <a class="link" href="./US/?tab=privacy#privacy"><span>Privacy Policy</span><span class="url">/Products/Doumen/US/?tab=privacy#privacy</span></a>
-          <a class="link" href="./US/?tab=terms#terms"><span>Terms of Service</span><span class="url">/Products/Doumen/US/?tab=terms#terms</span></a>
-        </nav>
-      </section>
-      <section>
-        <h2>CN / 简体中文</h2>
-        <p>用于中国区提交、中文隐私政策和服务条款。</p>
-        <nav>
-          <a class="link" href="./CN/?tab=support#support"><span>支持</span><span class="url">/Products/Doumen/CN/?tab=support#support</span></a>
-          <a class="link" href="./CN/?tab=privacy#privacy"><span>隐私政策</span><span class="url">/Products/Doumen/CN/?tab=privacy#privacy</span></a>
-          <a class="link" href="./CN/?tab=terms#terms"><span>服务条款</span><span class="url">/Products/Doumen/CN/?tab=terms#terms</span></a>
-        </nav>
-      </section>
-    </div>
+  <main class="shell">
+    <section class="hero">
+      <div class="eyebrow">Doumen Legal Center</div>
+      <h1>Choose the review region.</h1>
+      <p class="lead">
+        Each region has its own single-page legal center with three direct tabs:
+        Support, Privacy Policy, and Terms of Service. Review links can point to
+        the tab directly with a stable URL.
+      </p>
+    </section>
+
+    <section class="grid">
+      <article class="card">
+        <div class="region-tag">US / International</div>
+        <h2>English Region</h2>
+        <p>
+          Use the US page for App Store review and English-speaking users. The
+          page includes direct URLs for support, privacy policy, and terms.
+        </p>
+        <div class="actions">
+          <a class="action" href="./US/?tab=support#support">
+            <span class="action-label">Support</span>
+            <span class="action-url">/Products/Doumen/US/?tab=support#support</span>
+          </a>
+          <a class="action" href="./US/?tab=privacy#privacy">
+            <span class="action-label">Privacy Policy</span>
+            <span class="action-url">/Products/Doumen/US/?tab=privacy#privacy</span>
+          </a>
+          <a class="action" href="./US/?tab=terms#terms">
+            <span class="action-label">Terms of Service</span>
+            <span class="action-url">/Products/Doumen/US/?tab=terms#terms</span>
+          </a>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="region-tag">CN / 中国大陆</div>
+        <h2>中文地区</h2>
+        <p>
+          使用 CN 页面承载中文支持信息、隐私协议和服务声明，适合中国区提交与
+          面向中文用户展示。
+        </p>
+        <div class="actions">
+          <a class="action" href="./CN/?tab=support#support">
+            <span class="action-label">支持页面</span>
+            <span class="action-url">/Products/Doumen/CN/?tab=support#support</span>
+          </a>
+          <a class="action" href="./CN/?tab=privacy#privacy">
+            <span class="action-label">隐私协议</span>
+            <span class="action-url">/Products/Doumen/CN/?tab=privacy#privacy</span>
+          </a>
+          <a class="action" href="./CN/?tab=terms#terms">
+            <span class="action-label">服务声明</span>
+            <span class="action-url">/Products/Doumen/CN/?tab=terms#terms</span>
+          </a>
+        </div>
+      </article>
+    </section>
+
+    <p class="note">
+      Recommendation: submit the region-specific direct URLs above during review,
+      instead of the root landing page. That keeps the review target stable and
+      avoids ambiguity across locales.
+    </p>
   </main>
 </body>
 </html>

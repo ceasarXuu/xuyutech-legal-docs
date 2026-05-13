@@ -3,83 +3,560 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>豆门 Doumen 法律中心</title>
+  <title>Doumen CN 法律中心</title>
   <style>
-    :root { --bg: #f4f7f1; --panel: #fff; --ink: #17201a; --muted: #5d675f; --line: #dce4dc; --accent: #4f7f63; }
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body { margin: 0; padding: 24px 16px 42px; color: var(--ink); background: linear-gradient(180deg, #fafcf8, var(--bg)); font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif; line-height: 1.78; }
-    main { width: min(980px, 100%); margin: 0 auto; }
-    header, section { border: 1px solid var(--line); border-radius: 8px; background: var(--panel); box-shadow: 0 16px 50px rgba(35, 58, 42, 0.08); }
-    header { padding: 18px 22px; }
-    section { margin-top: 18px; padding: 28px; }
-    h1, h2, h3, p { margin: 0; }
-    h1 { font-size: clamp(2rem, 6vw, 3.5rem); line-height: 1.08; }
-    h2 { font-size: clamp(1.7rem, 4vw, 2.5rem); }
-    h3 { margin-top: 22px; font-size: 1.08rem; }
-    p, ul { color: var(--muted); }
-    p, ul { margin-top: 10px; }
-    nav { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
-    a { color: var(--accent); text-underline-offset: 0.18em; }
-    nav a { padding: 9px 12px; border: 1px solid var(--line); border-radius: 999px; background: #f8fbf7; text-decoration: none; }
-    .meta { color: var(--muted); }
-    .mail { font-size: 1.1rem; }
+    :root {
+      --bg: #f4eee6;
+      --surface: rgba(255, 251, 245, 0.84);
+      --surface-strong: #fffaf4;
+      --ink: #231912;
+      --muted: #6a5e55;
+      --line: rgba(60, 40, 27, 0.12);
+      --accent: #b95a2d;
+      --accent-deep: #8b3f1a;
+      --success: #4f6c46;
+      --shadow: 0 24px 80px rgba(64, 40, 21, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      padding: 24px 16px 40px;
+      color: var(--ink);
+      font-family: "Songti SC", "Noto Serif SC", "Source Han Serif SC", serif;
+      line-height: 1.8;
+      background:
+        radial-gradient(circle at top left, rgba(185, 90, 45, 0.18), transparent 34%),
+        radial-gradient(circle at bottom right, rgba(111, 136, 94, 0.14), transparent 30%),
+        linear-gradient(180deg, #faf4eb 0%, var(--bg) 60%, #efe2d2 100%);
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.24;
+      background-image:
+        linear-gradient(rgba(70, 49, 34, 0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(70, 49, 34, 0.06) 1px, transparent 1px);
+      background-size: 34px 34px;
+      mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.75), transparent 92%);
+    }
+
+    a {
+      color: var(--accent-deep);
+    }
+
+    .shell {
+      width: min(1120px, 100%);
+      margin: 0 auto;
+    }
+
+    .hero,
+    .tab-panel {
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      background: var(--surface);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(8px);
+    }
+
+    .hero {
+      padding: 18px 22px;
+      background: rgba(255, 251, 245, 0.78);
+    }
+
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: 12px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    p {
+      margin: 0;
+    }
+
+    .hero-tools {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .region-switch {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: flex-end;
+    }
+
+    .chip {
+      border: 1px solid rgba(60, 40, 27, 0.1);
+      color: var(--ink);
+      text-decoration: none;
+      background: rgba(255, 255, 255, 0.56);
+    }
+
+    .chip.active {
+      border-color: rgba(185, 90, 45, 0.22);
+      color: #fffaf3;
+      background: linear-gradient(135deg, var(--accent), var(--accent-deep));
+    }
+
+    .tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .tab-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 18px;
+      border: 1px solid rgba(60, 40, 27, 0.1);
+      border-radius: 999px;
+      color: var(--ink);
+      text-decoration: none;
+      background: rgba(255, 255, 255, 0.56);
+      transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+    }
+
+    .tab-link:hover,
+    .tab-link:focus-visible {
+      transform: translateY(-1px);
+      border-color: rgba(185, 90, 45, 0.28);
+      box-shadow: 0 12px 24px rgba(139, 63, 26, 0.12);
+    }
+
+    .tab-link.active {
+      border-color: rgba(185, 90, 45, 0.24);
+      color: #fffaf3;
+      background: linear-gradient(135deg, var(--accent), var(--accent-deep));
+      box-shadow: 0 14px 30px rgba(139, 63, 26, 0.18);
+    }
+
+    .tab-panel {
+      margin-top: 20px;
+      padding: 34px;
+      background: rgba(255, 251, 245, 0.72);
+    }
+
+    .tab-panel[hidden] {
+      display: none;
+    }
+
+    .section-head {
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section-head h2 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      line-height: 1.05;
+      letter-spacing: -0.04em;
+    }
+
+    .section-subtitle {
+      margin-top: 10px;
+      color: var(--muted);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 24px;
+    }
+
+    .info-card {
+      padding: 22px;
+      border: 1px solid rgba(60, 40, 27, 0.1);
+      border-radius: 22px;
+      background: rgba(255, 255, 255, 0.58);
+    }
+
+    .info-card h3 {
+      font-size: 1.15rem;
+    }
+
+    .info-card p,
+    .info-card ul {
+      margin-top: 12px;
+      color: var(--muted);
+    }
+
+    .info-card ul,
+    .policy-body ul {
+      padding-left: 20px;
+    }
+
+    .mail-link {
+      color: var(--accent-deep);
+      font-size: 1.1rem;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 0.18em;
+      word-break: break-word;
+    }
+
+    .badge {
+      display: inline-flex;
+      margin-top: 14px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      color: #f8f3ed;
+      background: linear-gradient(135deg, var(--success), #395437);
+      font-size: 0.94rem;
+    }
+
+    .policy-body {
+      display: grid;
+      gap: 22px;
+      margin-top: 24px;
+    }
+
+    .policy-block {
+      padding: 22px 24px;
+      border: 1px solid rgba(60, 40, 27, 0.1);
+      border-radius: 22px;
+      background: rgba(255, 255, 255, 0.58);
+    }
+
+    .policy-block h3 {
+      font-size: 1.2rem;
+    }
+
+    .policy-block h4 {
+      margin-top: 16px;
+      font-size: 1rem;
+    }
+
+    .policy-block p,
+    .policy-block ul {
+      margin-top: 10px;
+      color: var(--muted);
+    }
+
+    .policy-block strong {
+      color: var(--ink);
+    }
+
+    @media (max-width: 900px) {
+      .hero,
+      .tab-panel {
+        padding: 20px;
+      }
+
+      .hero-tools,
+      .section-head,
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .region-switch {
+        justify-content: flex-start;
+      }
+    }
+
+    @media (max-width: 560px) {
+      body {
+        padding: 12px 10px 24px;
+      }
+
+      .hero,
+      .tab-panel,
+      .info-card,
+      .policy-block {
+        border-radius: 20px;
+      }
+    }
   </style>
 </head>
 <body>
-  <main>
-    <header>
-      <h1>豆门 Doumen 法律中心</h1>
-      <p>生效日期：2026 年 5 月 13 日 · 开发者：Xuyu Tech</p>
-      <nav>
-        <a href="#support">支持</a>
-        <a href="#privacy">隐私政策</a>
-        <a href="#terms">服务条款</a>
-        <a href="../US/?tab=support#support">US</a>
-      </nav>
-    </header>
+  <main class="shell">
+    <section class="hero">
+      <div class="hero-tools">
+        <div class="tabs" aria-label="主导航">
+          <a class="tab-link" data-tab-link="support" href="?tab=support#support">支持</a>
+          <a class="tab-link" data-tab-link="privacy" href="?tab=privacy#privacy">隐私协议</a>
+          <a class="tab-link" data-tab-link="terms" href="?tab=terms#terms">服务声明</a>
+        </div>
 
-    <section id="support">
-      <h2>支持</h2>
-      <p>如需支持，或有隐私与法律相关问题，请联系：</p>
-      <p><a class="mail" href="mailto:xuyutechnologies@outlook.com">xuyutechnologies@outlook.com</a></p>
+        <div class="region-switch" aria-label="地区切换">
+          <a class="chip active" href="./?tab=support#support">CN</a>
+          <a class="chip" href="../US/?tab=support#support" data-region-link="../US/">US</a>
+        </div>
+      </div>
     </section>
 
-    <section id="privacy">
-      <h2>隐私政策</h2>
-      <p class="meta">豆门 Doumen 是一款本地优先的拼豆图纸生成和编辑工具。v0.1 核心功能无需注册、无需登录、无需上传图片即可使用。</p>
-      <h3>1. 我们收集的数据</h3>
-      <p>v0.1 默认不收集可识别个人身份的数据，不创建用户账号，不要求登录，也不将用户导入的图片、项目文件或导出图纸上传到服务器。如果你主动通过邮件联系我们，我们只会将你提供的信息用于处理反馈、支持请求或合规沟通。</p>
-      <h3>2. 图片和项目数据</h3>
-      <p>用户导入的图片用于在设备本地生成拼豆图纸。生成过程、编辑结果、项目草稿和导出文件默认保存在用户设备本地。PNG 导出提供可选项目元数据开关，并可进一步选择嵌入原图；如果你分享该 PNG，嵌入的数据也会随文件分享。</p>
-      <h3>3. 系统权限</h3>
-      <ul>
-        <li>系统照片选择器：用于选择图片，不请求完整相册读取权限。</li>
-        <li>相册写入权限：用于将导出的 PNG 图纸保存到相册。</li>
-        <li>文件访问或分享能力：用于导入图片、保存项目和导出文件。</li>
-      </ul>
-      <h3>4. 第三方服务</h3>
-      <p>豆门 v0.1 默认不包含广告 SDK、第三方统计 SDK、第三方追踪 SDK 或第三方账号登录。如果后续加入这些服务，本政策和 App Store 隐私信息将同步更新。</p>
-      <h3>5. 保留、删除和用户权利</h3>
-      <p>本地项目、导出文件和保存到相册的图片由用户在设备上管理。由于 v0.1 不提供账号系统和服务器存储，因此没有远程账号删除流程。</p>
-      <h3>6. 儿童隐私、版权和政策变更</h3>
-      <p>豆门面向一般手作和创作用途。我们不会故意收集儿童个人信息。用户需确保有权使用导入图片。如果后续加入联网服务，我们会按要求更新本政策。</p>
+    <section class="tab-panel" id="panel-support" data-tab-panel="support">
+      <div class="section-head">
+        <div>
+          <h2>支持</h2>
+          <p class="section-subtitle">
+            处理图片导入、图纸编辑、本地项目、导出异常、功能建议等问题。
+          </p>
+        </div>
+      </div>
+
+      <div class="grid">
+        <article class="info-card">
+          <h3>联系方式</h3>
+          <p><a class="mail-link" href="mailto:xuyutechnologies@outlook.com">xuyutechnologies@outlook.com</a></p>
+          <div class="badge">通常会在 3 个工作日内回复</div>
+          <p>支持、隐私和法律相关问题统一使用这个邮箱。</p>
+        </article>
+
+        <article class="info-card">
+          <h3>建议邮件里提供</h3>
+          <ul>
+            <li>设备型号与 iOS 版本</li>
+            <li>问题发生时的简要描述</li>
+            <li>是图片导入、编辑、导出还是本地项目问题</li>
+            <li>必要时附上能说明问题的截图</li>
+          </ul>
+        </article>
+
+        <article class="info-card">
+          <h3>我们可以协助的范围</h3>
+          <ul>
+            <li>图片导入和图纸生成问题</li>
+            <li>图纸编辑、改色和擦除相关问题</li>
+            <li>本地项目保存或保存副本问题</li>
+            <li>PNG/PDF 导出问题</li>
+            <li>Bug 反馈与功能建议</li>
+          </ul>
+        </article>
+
+      </div>
     </section>
 
-    <section id="terms">
-      <h2>服务条款</h2>
-      <p class="meta">使用豆门即表示你同意本服务条款。</p>
-      <h3>1. 服务内容</h3>
-      <p>豆门 v0.1 提供本地图片生成拼豆图纸、常见拼豆色卡匹配、格子编辑、本地项目保存、PNG/PDF 图纸导出等能力。v0.1 不提供账号、云同步、社区发布、在线素材库或材料购买服务。</p>
-      <h3>2. 本地优先和用户责任</h3>
-      <p>豆门主要在设备本地处理图片和项目。你需要自行管理设备、项目文件、导出文件和备份，并确保有权使用导入的图片、图案或其他内容。不得将豆门用于处理、创建或传播违法、侵权或损害他人权利的内容。</p>
-      <h3>3. 色卡和用量统计</h3>
-      <p>色彩匹配、色号、色名和用量统计仅作为手作参考。屏幕显示、图片质量、算法、拼豆批次、光照和手动编辑都可能影响结果。购买材料或制作成品前，请结合实际材料核对。</p>
-      <h3>4. 知识产权和禁止行为</h3>
-      <p>豆门 App、界面、文档、代码、品牌和相关设计归开发者或相应权利人所有。你保留导入内容和自建项目的权利。不得滥用 App、破坏安全机制、侵犯第三方权利，或误导他人认为豆门与某个拼豆品牌或平台存在官方合作。</p>
-      <h3>5. 免责、变更和适用法律</h3>
-      <p>豆门按“现状”和“可用”提供。在法律允许的最大范围内，开发者不对间接损失、材料浪费、制作失败、数据丢失或其他后果性损失承担责任。本条款可能因产品、法律或平台要求更新；在法律允许范围内，适用开发者主要营业地或居住地法律。</p>
+    <section class="tab-panel" id="panel-privacy" data-tab-panel="privacy" hidden>
+      <div class="section-head">
+        <div>
+          <h2>隐私协议</h2>
+          <p class="section-subtitle">更新日期：2026年5月13日</p>
+        </div>
+      </div>
+
+      <div class="policy-body">
+        <article class="policy-block">
+          <h3>1. 适用范围</h3>
+          <p>
+            本隐私政策适用于豆门 Doumen 应用。豆门由 Xuyu Tech 运营，
+            是一款本地优先的拼豆图纸生成和编辑工具。
+          </p>
+          <p>
+            豆门 v0.1 的核心功能设计为无需注册、无需登录、无需上传图片即可使用。
+            在使用服务前，请仔细阅读本政策。若您不同意本政策，请停止使用服务。
+          </p>
+        </article>
+
+        <article class="policy-block">
+          <h3>2. 我们处理的信息及目的</h3>
+          <h4>2.1 本地创建或提供的信息</h4>
+          <ul>
+            <li>您通过系统照片选择器或文件选择器主动选择的图片</li>
+            <li>生成的拼豆图纸、手动编辑结果、项目名称和本地草稿</li>
+            <li>导出设置，包括可选 PNG 项目元数据和可选原图嵌入</li>
+            <li>语言和外观偏好</li>
+          </ul>
+          <h4>2.2 支持沟通信息</h4>
+          <ul>
+            <li>您通过邮件联系我们时主动提供的邮箱地址和问题内容</li>
+            <li>您自愿提供的设备型号、iOS 版本、截图或问题细节</li>
+          </ul>
+          <p>豆门 v0.1 不创建用户账号，也不使用第三方行为追踪或广告分析 SDK。</p>
+        </article>
+
+        <article class="policy-block">
+          <h3>3. 信息使用与第三方服务</h3>
+          <p>
+            图片和项目主要在设备本地处理，用于生成、编辑、保存和导出拼豆图纸。
+          </p>
+          <ul>
+            <li><strong>Apple 系统服务：</strong>系统照片选择器和相册写入权限仅用于用户主动触发的导入和导出流程。</li>
+            <li><strong>本地文件：</strong>项目包和导出的 PNG/PDF 文件保存在您选择的位置或 App 沙盒中。</li>
+            <li><strong>支持邮箱：</strong>您通过邮件提供的信息仅用于回复支持、隐私或法律请求。</li>
+          </ul>
+          <p>我们不会出售个人信息，也不会将您的信息用于定向广告。</p>
+        </article>
+
+        <article class="policy-block">
+          <h3>4. 存储、保护与保留</h3>
+          <ul>
+            <li>本地项目和草稿保留在您的设备中，直到您删除或卸载 App。</li>
+            <li>导出文件由您在相册、文件或其他保存/分享目的地中自行管理。</li>
+            <li>PNG 文件可能包含可选项目元数据，并可在开启时包含原图；分享该文件会同时分享嵌入数据。</li>
+            <li>支持邮件仅在回复、记录维护或满足法律要求所需期间保留。</li>
+          </ul>
+          <p>任何传输或存储方式都无法保证绝对安全。</p>
+        </article>
+
+        <article class="policy-block">
+          <h3>5. 您的权利</h3>
+          <p>您可以通过设备和 App 功能访问、更正、导出或删除本地项目。由于豆门 v0.1 不提供账号系统和服务器项目存储，因此没有远程账号删除流程。</p>
+          <p>根据您所在地区，您可能享有 GDPR、CCPA/CPRA、个人信息保护法、APPI 或 PIPA 等法律下的额外权利。我们不会故意收集低于适用年龄门槛儿童的个人信息。</p>
+        </article>
+
+        <article class="policy-block">
+          <h3>6. 联系方式</h3>
+          <p>
+            如对本隐私政策有疑问、意见或投诉，请联系
+            <a href="mailto:xuyutechnologies@outlook.com">xuyutechnologies@outlook.com</a>。
+          </p>
+        </article>
+      </div>
     </section>
-  </main>
+
+    <section class="tab-panel" id="panel-terms" data-tab-panel="terms" hidden>
+      <div class="section-head">
+        <div>
+          <h2>服务声明</h2>
+          <p class="section-subtitle">更新日期：2026年5月13日</p>
+        </div>
+      </div>
+
+      <div class="policy-body">
+        <article class="policy-block">
+          <h3>1. 协议说明</h3>
+          <p>
+            本协议由您与豆门 Doumen 就使用应用所订立。您下载、安装或使用
+            豆门，即表示已阅读并同意本协议全部内容。
+          </p>
+        </article>
+
+        <article class="policy-block">
+          <h3>2. 服务内容与使用资格</h3>
+          <ul>
+            <li>豆门提供本地图片生成拼豆图纸、常见拼豆色卡匹配、图纸编辑、本地项目保存、PNG/PDF 导出等功能。</li>
+            <li>您需年满 13 周岁或所在地法律规定的最低年龄。</li>
+            <li>未满 18 周岁的用户应在监护人同意下使用。</li>
+            <li>豆门 v0.1 不要求注册账号，您需自行妥善保管设备、项目文件和导出文件。</li>
+          </ul>
+        </article>
+
+        <article class="policy-block">
+          <h3>3. 用户行为规范</h3>
+          <ul>
+            <li>不得实施违法行为或侵害他人合法权益。</li>
+            <li>不得反向工程、破解、绕过安全机制。</li>
+            <li>不得将豆门用于处理或传播侵权、违法或损害他人权利的内容。</li>
+            <li>不得误导他人认为豆门与某个拼豆品牌或平台存在官方合作。</li>
+          </ul>
+        </article>
+
+        <article class="policy-block">
+          <h3>4. 用户内容、本地文件与第三方服务</h3>
+          <ul>
+            <li>您需对导入、创建、保存、导出或分享的图片、图纸和文件负责。</li>
+            <li>豆门 v0.1 本地保存项目，不提供账号、云同步、社区发布或在线素材库。</li>
+            <li>Apple 的照片、文件、App Store 分发等系统服务适用 Apple 自身条款和政策。</li>
+            <li>色彩匹配和拼豆用量统计仅作为手作参考，可能受图片质量、屏幕显示、拼豆批次、光照和手动编辑影响。</li>
+          </ul>
+        </article>
+
+        <article class="policy-block">
+          <h3>5. 费用、免责与责任限制</h3>
+          <ul>
+            <li>豆门 v0.1 作为免费 App 分发。</li>
+            <li>应用按“现状”和“可用”提供，不提供任何明示或默示保证。</li>
+            <li>我们不保证颜色完全还原、材料数量完全准确、服务不中断或适合每一种手作场景。</li>
+            <li>在法律允许的最大范围内，开发者不对间接损失、材料浪费、制作失败、数据丢失或其他后果性损失承担责任。</li>
+          </ul>
+        </article>
+
+        <article class="policy-block">
+          <h3>6. 适用法律、争议与联系方式</h3>
+          <p>在法律允许范围内，本协议适用开发者主要营业地或居住地法律。若强制性消费者保护或平台规则另有要求，以其要求为准。</p>
+          <p>
+            如需帮助或提出问题，请联系
+            <a href="mailto:xuyutechnologies@outlook.com">xuyutechnologies@outlook.com</a>。
+          </p>
+        </article>
+      </div>
+    </section>
+  <script>
+    (function () {
+      var tabs = ["support", "privacy", "terms"];
+
+      function resolveTab() {
+        var params = new URLSearchParams(window.location.search);
+        var queryTab = params.get("tab");
+        var hashTab = window.location.hash.replace("#", "");
+        if (tabs.indexOf(queryTab) !== -1) return queryTab;
+        if (tabs.indexOf(hashTab) !== -1) return hashTab;
+        return "support";
+      }
+
+      function syncRegionLinks(tab) {
+        document.querySelectorAll("[data-region-link]").forEach(function (link) {
+          var base = link.getAttribute("data-region-link");
+          link.href = base + "?tab=" + tab + "#" + tab;
+        });
+      }
+
+      function activateTab(tab, replace) {
+        if (tabs.indexOf(tab) === -1) tab = "support";
+
+        document.querySelectorAll("[data-tab-link]").forEach(function (link) {
+          var active = link.getAttribute("data-tab-link") === tab;
+          link.classList.toggle("active", active);
+          link.setAttribute("aria-current", active ? "page" : "false");
+        });
+
+        document.querySelectorAll("[data-tab-panel]").forEach(function (panel) {
+          panel.hidden = panel.getAttribute("data-tab-panel") !== tab;
+        });
+
+        syncRegionLinks(tab);
+
+        var url = new URL(window.location.href);
+        url.searchParams.set("tab", tab);
+        url.hash = tab;
+        if (replace) {
+          history.replaceState({ tab: tab }, "", url.toString());
+        } else {
+          history.pushState({ tab: tab }, "", url.toString());
+        }
+      }
+
+      var initialTab = resolveTab();
+      activateTab(initialTab, true);
+
+      document.querySelectorAll("[data-tab-link]").forEach(function (link) {
+        link.addEventListener("click", function (event) {
+          event.preventDefault();
+          activateTab(link.getAttribute("data-tab-link"), false);
+        });
+      });
+
+      window.addEventListener("popstate", function () {
+        activateTab(resolveTab(), true);
+      });
+
+      window.addEventListener("hashchange", function () {
+        activateTab(resolveTab(), true);
+      });
+    })();
+  </script>
 </body>
 </html>
