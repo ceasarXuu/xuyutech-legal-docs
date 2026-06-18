@@ -4,11 +4,11 @@ Effective Date: June 18, 2026
 Developer: Xuyu Tech
 Contact Email: xuyutechnologies@outlook.com
 
-Doumen is a local-first bead pattern maker and editor. We designed the v0.1 core workflow to work without registration, login, or developer-operated image uploads. Some optional features, such as iCloud sync, use Apple system services only when you enable or trigger them.
+Doumen is a local-first bead pattern maker and editor. We designed the core workflow to work without registration, login, or developer-operated image uploads. Some optional features, such as iCloud sync, use Apple system services only when you enable or trigger them.
 
 ## 1. Data We Collect
 
-By default, Doumen v0.1 does not collect personally identifiable information, does not create user accounts, does not require login, and does not upload imported images, project files, or exported patterns to Xuyu Tech servers.
+By default, Doumen does not collect personally identifiable information, does not create user accounts, does not require login, and does not upload imported images, project files, or exported patterns to Xuyu Tech servers.
 
 If you contact us by email or another support channel, we may receive the contact information and message content you choose to provide. We use that information only to respond to feedback, support requests, or compliance matters.
 
@@ -16,7 +16,7 @@ If you contact us by email or another support channel, we may receive the contac
 
 Images you import are used to generate, crop, recognize, edit, and export bead patterns on your device. Generated patterns, manual edits, project drafts, inventory inputs, making-session progress, import-plan recognition results, background-removal state, and exported files are stored locally on your device by default.
 
-Image analysis features such as crop detection, color sampling, OCR-assisted pattern import, and background cleanup are designed to run on device. Doumen v0.1 does not upload your images to Xuyu Tech servers for cloud processing.
+Image analysis features such as crop detection, color sampling, OCR-assisted pattern import, and background cleanup are designed to run on device. Doumen does not upload your images to Xuyu Tech servers for cloud processing.
 
 PNG export includes an optional project metadata switch, with a second optional switch to embed the original image in PNG metadata. This data is written only into the local PNG file you choose to export, so the project can be restored if the PNG is imported again. If you share that PNG with someone else, the embedded project data or original image will be shared with the file.
 
@@ -32,7 +32,7 @@ If you disable iCloud sync, Doumen stops initiating project sync for that device
 
 Doumen may request the following system permissions:
 
-- System photo picker: used to choose images and generate bead patterns on your device; the current version does not request full photo library read access.
+- System photo picker: used to choose images and generate bead patterns on your device; Doumen does not request full photo library read access.
 - Photo library add access: used to save exported PNG pattern images to Photos.
 - File access or sharing features: used to import images, save projects, and export PNG or PDF files.
 - iCloud container access: used only for optional project sync, account-change confirmation, and sync repair flows when sync is enabled.
@@ -47,7 +47,7 @@ If you send screenshots, exported diagnostic packages, sample files, or a suppor
 
 ## 6. Third-Party Services
 
-Doumen v0.1 does not include advertising SDKs, third-party analytics SDKs, third-party tracking SDKs, third-party crash-reporting SDKs, remote configuration SDKs, or third-party account login by default.
+Doumen does not include advertising SDKs, third-party analytics SDKs, third-party tracking SDKs, third-party crash-reporting SDKs, remote configuration SDKs, or third-party account login by default.
 
 Doumen uses Apple platform services such as Photos, Files, Vision/OCR frameworks, Share Sheet, App Store distribution, and optional iCloud. Those services are governed by Apple's terms and privacy policy.
 
@@ -59,7 +59,7 @@ Local projects, exported files, and images saved to Photos are managed by you on
 
 Uninstalling Doumen usually removes project data stored in the app sandbox, but it does not automatically remove content you exported to Photos, Files, iCloud, or other locations.
 
-Because Doumen v0.1 does not provide Xuyu Tech accounts or Xuyu Tech server-side project storage, there is no Xuyu Tech remote account deletion process.
+Because Doumen does not provide Xuyu Tech accounts or Xuyu Tech server-side project storage, there is no Xuyu Tech remote account deletion process.
 
 ## 8. Children's Privacy
 

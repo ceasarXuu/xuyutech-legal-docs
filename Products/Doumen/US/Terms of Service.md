@@ -8,7 +8,7 @@ Welcome to Doumen. Doumen is a local-first tool for generating, recognizing, edi
 
 ## 1. Service
 
-Doumen v0.1 provides features to:
+Doumen provides features to:
 
 - Generate bead patterns from local images.
 - Import existing pattern images with crop, color, and OCR-assisted recognition tools.
@@ -18,7 +18,7 @@ Doumen v0.1 provides features to:
 - Export pattern sheets and usage information as PNG, PDF, or other supported formats.
 - Optionally sync project data through Apple iCloud when the iCloud sync setting is enabled.
 
-Doumen v0.1 does not provide Xuyu Tech accounts, community publishing, online asset libraries, or bead purchasing services.
+Doumen does not provide Xuyu Tech accounts, community publishing, online asset libraries, or bead purchasing services.
 
 ## 2. Local-First Use and User Responsibility
 
