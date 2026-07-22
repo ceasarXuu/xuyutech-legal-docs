@@ -1,7 +1,7 @@
 # Doumen Privacy Policy
 
 Effective Date: With the Doumen v1.0.6 release (pending)
-Operator: Individual developer (brand name: Xuyu Tech; identified by the developer/seller shown on the App Store product page)
+Operator: ZhangXu (Chinese name: 张旭), individual developer (brand name: Xuyu Tech; identified by the developer/seller shown on the App Store product page)
 Contact Email: xuyutechnologies@outlook.com
 
 > Draft for v1.0.6. This version has not been published and is not yet effective. Legal/compliance review and the final effective date are required before release.
@@ -32,7 +32,7 @@ If you disable iCloud sync, Doumen stops initiating project sync for that device
 
 ## 4. Mobile Analytics in Mainland China
 
-Doumen offers the Umeng U-App analytics option only when the device system region is set to Mainland China (`CN`). This setting is used only to determine whether the Mainland China analytics option is offered; it does not mean that Doumen determines or records the user's actual geographic location. The SDK must not initialize or continue reporting before consent, after refusal, or after consent is withdrawn. Refusing analytics does not restrict Doumen's core pattern-tool features. Umeng analytics remains disabled for every other system region.
+Doumen offers the Umeng U-App analytics option only when the device system region is set to Mainland China (`CN`). This setting is used only to determine whether the Mainland China analytics option is offered; it does not mean that Doumen determines or records the user's actual geographic location. The SDK must not initialize or continue reporting before consent, after refusal, or after consent is withdrawn. The current product design ends the current app use after “Decline and Exit” and presents the notice again on the next launch; this interaction must not ship until its legal and App Store review risks are resolved. Umeng analytics remains disabled for every other system region.
 
 Analytics is used for app data analysis, including launches, sessions, usage trends, the effect of product improvements, and basic anti-fraud. Based on Umeng's official iOS compliance guide, its current privacy policy, and Doumen's integration scope, the SDK may automatically process and transmit:
 
@@ -103,7 +103,7 @@ Because Doumen does not provide Xuyu Tech accounts or Xuyu Tech server-side proj
 
 Doumen is intended for general craft and creative use and has a 4+ age rating on the App Store. That rating describes content suitability; it does not mean that Doumen identifies a user's age or automatically obtains parental or guardian consent. Doumen does not ask for a date of birth or age and does not implement age recognition, age gating, or profiling of minors.
 
-For a user under 14, a parent or guardian should review this policy and the analytics notice and decide whether to consent to optional Umeng analytics. The parent or guardian may choose “Decline” without affecting core app features. If a parent or guardian believes that analytics information about a user under 14 was processed without their consent, they may contact us. We will stop further processing and, after verification, help submit a deletion request to Umeng. We will not introduce routine age collection solely to handle such requests.
+For a user under 14, a parent or guardian should review this policy and the analytics notice and decide whether to consent to optional Umeng analytics. The parent or guardian may choose “Decline and Exit.” If a parent or guardian believes that analytics information about a user under 14 was processed without their consent, they may contact us. We will stop further processing and, after verification, help submit a deletion request to Umeng. We will not introduce routine age collection solely to handle such requests.
 
 ## 10. User Content and Copyright
 

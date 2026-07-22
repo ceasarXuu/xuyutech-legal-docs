@@ -272,11 +272,15 @@
 
 ## Requester Clarification Follow-up（2026-07-22）
 
-- 用户确认豆门是个人开发 App。草案已将运营者改为“个人开发者（品牌名 Xuyu Tech；以 App Store 产品页显示的开发者/销售方为准）”，并保留可直接联系的隐私邮箱。N4 的“误写为公司主体”风险已处理；最终发布仍应核对 App Store 展示身份与政策完全一致。
+- 用户确认豆门是个人开发 App，后续提供真实姓名“张旭（ZhangXu）”。草案已将运营者改为“张旭（ZhangXu），个人开发者（品牌名 Xuyu Tech；以 App Store 产品页显示的开发者/销售方为准）”，并保留可直接联系的隐私邮箱。N4 的“误写为公司主体”风险已处理；最终发布仍应核对 App Store 展示身份与政策完全一致。
 - 已通过友盟开发者中心文档接口核验 2026-06-05 生效的最新版友盟隐私政策，以及官方《移动统计 SDK 合规配置指引（iOS）》。草案已补入友盟同欣（北京）科技有限公司、注册地址、官方字段范围、存储/期限确定方式、退出入口和隐私联系邮箱。
 - B2 中“友盟运营主体缺失”的子项已修正，但友盟在具体集成关系中的法律角色、统一固定保存天数未由官方材料明确，仍需以开发者协议/工单答复或最终法律审查关闭。
 - B4 不因采用友盟官方参考文案而关闭：当前 UMCommon 7.6.4 的 Apple 隐私清单仍声明广告数据、第三方广告目的和跟踪。草案已显著标为发布阻断；不得用概括性的官方模板覆盖本地归档证据。
 - 用户进一步确认 App Store 年龄分级为 4+，产品不存在年龄采集、识别或限制能力。此前建议的“未满 14 周岁选项/年龄禁用状态”已撤回；草案改为准确披露无年龄识别，并由监护人阅读同一统计告知、决定同意或拒绝。B6 的实现门禁调整为监护人告知、联系停止和友盟删除协助，不新增年龄采集或年龄画像。
+- 用户进一步提供个人开发者真实姓名为“张旭（ZhangXu）”；CN/US Markdown 与本地 HTML 草案已同步，最终仍须逐字核对 App Store Connect 实际展示格式。
+- 用户要求拒绝后直接退出 App。Apple Technical Q&A QA1561 说明 iOS 没有优雅终止 App 的公开 API，并警告 `exit` 会呈现为类似崩溃且可能跳过终止回调；因此该交互继续作为 App Review 与数据完整性发布阻断，不得宣称为行业低风险做法。
+- 用户提出不提供撤回同意操作。该请求与《个人信息保护法》第十五条、《网络数据安全管理条例》第二十三条、《App违法违规收集使用个人信息行为认定方法》第三项第 8 点及 App Review Guidelines 5.1.1(ii) 的明文要求冲突，审查不接受删除撤回入口。
+- 已检查 UMCommon 7.6.4 公开头文件、二进制字符串和内置隐私清单。ASA 与 SKAdNetwork 归因可关闭，全部统计也可关闭，但没有仅关闭广告/IDFA/Tracking 的公开开关；运行时开关不会改变 SDK 自带的广告数据、第三方广告目的和 Tracking 声明。B4 仍须由友盟修正版 SDK/清单或移除 SDK 关闭。
 - 本次更新没有发布或推送法律文档，也没有将整体审查状态从 `blocked` 改为通过。
 
 ## Official and Industry Sources
@@ -289,6 +293,7 @@
 - [《个人信息保护合规审计管理办法》](https://www.cac.gov.cn/2025-02/14/c_1741233507681519.htm)，国家互联网信息办公室，访问于 2026-07-22。
 - [《互联网应用程序个人信息收集使用规定（征求意见稿）》](https://www.cac.gov.cn/2026-01/10/c_1769603446094128.htm)，国家互联网信息办公室，访问于 2026-07-22；仅作趋势参考。
 - [App Review Guidelines §5.1](https://developer.apple.com/app-store/review/guidelines/)，Apple，访问于 2026-07-22。
+- [Technical Q&A QA1561: How do I programmatically quit my iOS application?](https://developer.apple.com/library/archive/qa/qa1561/_index.html)，Apple，访问于 2026-07-22。
 - [App Privacy Details](https://developer.apple.com/app-store/app-privacy-details/)，Apple，访问于 2026-07-22。
 - [Upcoming third-party SDK requirements](https://developer.apple.com/support/third-party-SDK-requirements/)，Apple，访问于 2026-07-22。
 - [Adding a privacy manifest to your app or third-party SDK](https://developer.apple.com/documentation/bundleresources/adding-a-privacy-manifest-to-your-app-or-third-party-sdk)，Apple，访问于 2026-07-22。

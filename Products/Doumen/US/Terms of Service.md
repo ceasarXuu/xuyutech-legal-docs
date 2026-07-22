@@ -1,7 +1,7 @@
 # Doumen Terms of Service
 
 Effective Date: June 18, 2026
-Developer: Xuyu Tech
+Developer: ZhangXu (Chinese name: 张旭; brand name: Xuyu Tech)
 Contact Email: xuyutechnologies@outlook.com
 
 Welcome to Doumen. Doumen is a local-first tool for generating, recognizing, editing, saving, syncing, and exporting bead patterns. By using Doumen, you agree to these Terms of Service.
