@@ -345,7 +345,17 @@
             <li><strong>Support email:</strong> Information you send by email is used only to respond to support, privacy, or legal requests.</li>
             <li><strong>Umeng Mobile Analytics SDK (U-App; UMCommon 7.6.4 / UMDevice 3.6.0):</strong> Enabled only after a separate opt-in for users whose system region is Mainland China, for app analytics and basic anti-fraud. It is operated by Umeng Tongxin (Beijing) Technology Co., Ltd. It may process app/SDK version and channel, launch/session and reviewed non-content events, device and system information, language/time zone, disk/CPU/battery information, IP address/network state, and IDFA, OpenUDID, GUID, or an Umeng device identifier. It does not receive imported images, pattern content, project files, project names, or exports. This integration does not request location permission or enable location-based or installed-app-list analytics. See the <a href="https://developer.umeng.com/docs/147377/detail/3038360">Umeng Privacy Policy</a>, <a href="https://developer.umeng.com/docs/147377/detail/214848">iOS Compliance Guide</a>, and <a href="https://outdip.umeng.com/opt_out.html">end-device opt-out</a>.</li>
           </ul>
-          <p>The SDK must not initialize or continue reporting before consent, after refusal, or after consent is withdrawn. Refusal does not restrict core pattern-tool features. We do not sell personal data or use it to display ads in Doumen. The current SDK's Apple privacy manifest contains advertising/tracking declarations that conflict with this purpose; v1.0.6 will not be released until Umeng provides a verifiable explanation or corrected SDK and the result passes archive and on-device review.</p>
+          <p>The SDK must not initialize or continue reporting before consent, after refusal, or after consent is withdrawn. Refusal does not restrict core pattern-tool features. We do not sell personal data or use it to display ads in Doumen.</p>
+          <blockquote>
+            <p><strong>Quoted declarations from the Apple privacy manifest bundled with UMCommon 7.6.4:</strong></p>
+            <ul>
+              <li><code>NSPrivacyCollectedDataTypeAdvertisingData</code></li>
+              <li><code>NSPrivacyCollectedDataTypeLinked = false</code></li>
+              <li><code>NSPrivacyCollectedDataTypePurposeThirdPartyAdvertising</code></li>
+              <li><code>NSPrivacyCollectedDataTypeTracking = true</code></li>
+            </ul>
+            <p>These are declarations in the SDK's <code>PrivacyInfo.xcprivacy</code>; they do not by themselves prove that Doumen's current configuration accesses or transmits advertising data at runtime. They nevertheless conflict with Doumen's intended use and remain a v1.0.6 release blocker. The release will not proceed without a verifiable Umeng explanation or corrected SDK and successful archive and on-device review.</p>
+          </blockquote>
         </article>
         <article class="policy-block">
           <h3>4. Storage, Security, and Retention</h3>

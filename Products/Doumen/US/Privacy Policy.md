@@ -57,7 +57,14 @@ Doumen does not send imported images, pattern contents, project files, project n
 
 Users may withdraw analytics consent in the app settings or contact us to exercise applicable access, correction, deletion, or other privacy rights. For Umeng-side data, we will help route the request to Umeng; users may also use Umeng's end-device opt-out page or privacy email. The final data inventory, App Store privacy disclosure, retention explanation, and withdrawal workflow remain subject to SDK audit and legal/compliance review before v1.0.6 is released.
 
-> Release blocker: UMCommon 7.6.4 currently ships an Apple privacy manifest that declares advertising data, a third-party advertising purpose, and tracking. Those declarations conflict with Doumen's analytics-only, no-advertising purpose. Before release, Umeng must provide a verifiable explanation or corrected SDK, followed by archive privacy-report and on-device network verification. If this cannot be resolved, the Umeng SDK must be removed. This paragraph is a draft audit note and will be replaced by final user-facing wording after closure.
+> **Quoted declarations from the Apple privacy manifest bundled with UMCommon 7.6.4:**
+>
+> - Collected data type: `NSPrivacyCollectedDataTypeAdvertisingData`;
+> - Linked to identity: `NSPrivacyCollectedDataTypeLinked = false`;
+> - Purpose: `NSPrivacyCollectedDataTypePurposeThirdPartyAdvertising`;
+> - Used for tracking: `NSPrivacyCollectedDataTypeTracking = true`.
+>
+> These are declarations in the SDK's `PrivacyInfo.xcprivacy`; they do not by themselves prove that Doumen's current configuration actually accesses or transmits advertising data at runtime. They nevertheless conflict with Doumen's analytics-only, no-advertising purpose. Before release, Umeng must provide a verifiable explanation or corrected SDK, followed by archive privacy-report and on-device network verification. If this cannot be resolved, the Umeng SDK must be removed. This paragraph is a draft audit note and will be replaced by final user-facing wording after closure.
 
 ## 5. Permissions
 

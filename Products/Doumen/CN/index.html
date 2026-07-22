@@ -344,7 +344,17 @@
             <li><strong>支持邮箱：</strong>您通过邮件提供的信息仅用于回复支持、隐私或法律请求。</li>
             <li><strong>友盟移动统计 SDK（U-App；UMCommon 7.6.4 / UMDevice 3.6.0）：</strong>仅对中国大陆系统地区且已单独同意的用户启用，用于 App 数据统计分析和基础反作弊。运营方为友盟同欣（北京）科技有限公司。可能处理 App/SDK 版本及渠道、启动/会话和经审核的非内容事件、设备型号和系统信息、语言/时区、硬盘/CPU/电池信息、IP 地址和网络状态，以及 IDFA、OpenUDID、GUID 或友盟设备标识。不上传图片、图纸内容、项目文件、项目名称或导出文件；本次集成不申请定位权限、不启用位置区域统计或应用列表统计。查看<a href="https://developer.umeng.com/docs/147377/detail/3038360">友盟隐私政策</a>、<a href="https://developer.umeng.com/docs/147377/detail/214848">iOS 合规指南</a>和<a href="https://outdip.umeng.com/opt_out.html">终端设备退出页面</a>。</li>
           </ul>
-          <p>未同意、已拒绝或已撤回同意时，友盟 SDK 不得初始化或继续上报。拒绝不影响核心工具功能。我们不会出售个人信息，也不会使用这些数据在豆门中展示广告。当前 SDK 的 Apple 隐私清单存在广告/跟踪声明冲突，属于 v1.0.6 发布阻断；未取得友盟可验证的解释或修正版并完成审计前不会发布。</p>
+          <p>未同意、已拒绝或已撤回同意时，友盟 SDK 不得初始化或继续上报。拒绝不影响核心工具功能。我们不会出售个人信息，也不会使用这些数据在豆门中展示广告。</p>
+          <blockquote>
+            <p><strong>UMCommon 7.6.4 自带 Apple 隐私清单的原始声明（引用）：</strong></p>
+            <ul>
+              <li><code>NSPrivacyCollectedDataTypeAdvertisingData</code>（广告数据）</li>
+              <li><code>NSPrivacyCollectedDataTypeLinked = false</code>（不关联用户身份）</li>
+              <li><code>NSPrivacyCollectedDataTypePurposeThirdPartyAdvertising</code>（第三方广告目的）</li>
+              <li><code>NSPrivacyCollectedDataTypeTracking = true</code>（用于跟踪）</li>
+            </ul>
+            <p>这些是 SDK 的 <code>PrivacyInfo.xcprivacy</code> 声明，不等同于已证明豆门当前配置在运行时实际读取或上报广告数据，但它与豆门的使用目的不一致，属于 v1.0.6 发布阻断。未取得友盟可验证的解释或修正版并完成归档与真机审计前不会发布。</p>
+          </blockquote>
         </article>
         <article class="policy-block">
           <h3>4. 存储、保护与保留</h3>
