@@ -65,16 +65,6 @@
       padding: 18px 22px;
       background: rgba(255, 251, 245, 0.78);
     }
-    .chip {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 8px 14px;
-      border-radius: 999px;
-      font-size: 12px;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-    }
     h1, h2, h3, h4, p {
       margin: 0;
     }
@@ -85,21 +75,21 @@
       align-items: center;
     }
     .region-switch {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      justify-content: flex-end;
+      justify-self: end;
     }
-    .chip {
+    .region-select {
+      min-width: 116px;
+      padding: 10px 14px;
       border: 1px solid rgba(60, 40, 27, 0.1);
+      border-radius: 999px;
       color: var(--ink);
-      text-decoration: none;
       background: rgba(255, 255, 255, 0.56);
+      font: inherit;
+      cursor: pointer;
     }
-    .chip.active {
-      border-color: rgba(184, 95, 52, 0.22);
-      color: #fffaf3;
-      background: linear-gradient(135deg, var(--accent), var(--accent-deep));
+    .region-select:focus-visible {
+      outline: 2px solid rgba(184, 95, 52, 0.4);
+      outline-offset: 2px;
     }
     .tabs {
       display: flex;
@@ -221,7 +211,7 @@
         grid-template-columns: 1fr;
       }
       .region-switch {
-        justify-content: flex-start;
+        justify-self: start;
       }
     }
     @media (max-width: 560px) {
@@ -243,9 +233,11 @@
           <a class="tab-link" data-tab-link="privacy" href="?tab=privacy#privacy">Privacy Policy</a>
           <a class="tab-link" data-tab-link="terms" href="?tab=terms#terms">Terms of Service</a>
         </div>
-        <div class="region-switch" aria-label="Region switcher">
-          <a class="chip active" href="./?tab=support#support">Global</a>
-          <a class="chip" href="../CN/?tab=support#support" data-region-link="../CN/">CN</a>
+        <div class="region-switch">
+          <select id="region-select" class="region-select" data-region-select aria-label="Region">
+            <option value="../CN/">China</option>
+            <option value="./" selected>Global</option>
+          </select>
         </div>
       </div>
     </section>
@@ -401,12 +393,6 @@
         if (tabs.indexOf(hashTab) !== -1) return hashTab;
         return "support";
       }
-      function syncRegionLinks(tab) {
-        document.querySelectorAll("[data-region-link]").forEach(function (link) {
-          var base = link.getAttribute("data-region-link");
-          link.href = base + "?tab=" + tab + "#" + tab;
-        });
-      }
       function activateTab(tab, replace) {
         if (tabs.indexOf(tab) === -1) tab = "support";
         document.querySelectorAll("[data-tab-link]").forEach(function (link) {
@@ -417,7 +403,6 @@
         document.querySelectorAll("[data-tab-panel]").forEach(function (panel) {
           panel.hidden = panel.getAttribute("data-tab-panel") !== tab;
         });
-        syncRegionLinks(tab);
         var url = new URL(window.location.href);
         url.searchParams.set("tab", tab);
         url.hash = tab;
@@ -433,6 +418,12 @@
         link.addEventListener("click", function (event) {
           event.preventDefault();
           activateTab(link.getAttribute("data-tab-link"), false);
+        });
+      });
+      document.querySelectorAll("[data-region-select]").forEach(function (select) {
+        select.addEventListener("change", function () {
+          var tab = resolveTab();
+          window.location.href = select.value + "?tab=" + tab + "#" + tab;
         });
       });
       window.addEventListener("popstate", function () {
