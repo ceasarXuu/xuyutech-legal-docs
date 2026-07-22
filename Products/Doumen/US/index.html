@@ -298,7 +298,8 @@
         <article class="policy-block">
           <h3>1. Introduction</h3>
           <p>
-            Doumen is operated by Xuyu Tech. This Privacy Policy explains how we
+            Doumen is operated by an individual developer under the Xuyu Tech brand,
+            identified by the developer/seller shown on the App Store product page. This Privacy Policy explains how we
             handle information when you use the Doumen mobile application, a
             local-first bead pattern maker and editor.
           </p>
@@ -332,7 +333,7 @@
             <li>Email address and message content if you contact support</li>
             <li>Device model, iOS version, screenshots, or details you voluntarily include</li>
           </ul>
-          <p>Doumen does not create Xuyu Tech user accounts. Starting with v1.0.6, Umeng U-App analytics may be enabled only when the system region is Mainland China and the user has explicitly consented. It remains disabled in every other region.</p>
+          <p>Doumen does not create developer-operated user accounts. Starting with v1.0.6, Umeng U-App analytics may be enabled only when the system region is set to Mainland China and the user separately opts in. This setting does not mean that we determine or record the user's actual location. Analytics remains disabled in every other system region.</p>
         </article>
         <article class="policy-block">
           <h3>3. Use of Data and Third-Party Services</h3>
@@ -342,9 +343,9 @@
             <li><strong>Local files:</strong> Project packages and exported PNG/PDF files are stored where you choose or in the app sandbox.</li>
             <li><strong>Optional iCloud sync:</strong> If enabled, project sync data is stored in your Apple iCloud account through Apple services. Xuyu Tech does not operate a separate project-sync server.</li>
             <li><strong>Support email:</strong> Information you send by email is used only to respond to support, privacy, or legal requests.</li>
-            <li><strong>Umeng U-App:</strong> Enabled only for explicitly consenting users whose system region is Mainland China, for aggregated launch, session, and reviewed non-content usage analytics. It may process app version/channel, device model, OS version, network status, session timing, and SDK device or installation identifiers. It does not receive imported images, pattern content, project files, project names, or exports. See the <a href="https://www.umeng.com/page/policy">Umeng+ Privacy Policy</a>.</li>
+            <li><strong>Umeng Mobile Analytics SDK (U-App; UMCommon 7.6.4 / UMDevice 3.6.0):</strong> Enabled only after a separate opt-in for users whose system region is Mainland China, for app analytics and basic anti-fraud. It is operated by Umeng Tongxin (Beijing) Technology Co., Ltd. It may process app/SDK version and channel, launch/session and reviewed non-content events, device and system information, language/time zone, disk/CPU/battery information, IP address/network state, and IDFA, OpenUDID, GUID, or an Umeng device identifier. It does not receive imported images, pattern content, project files, project names, or exports. This integration does not request location permission or enable location-based or installed-app-list analytics. See the <a href="https://developer.umeng.com/docs/147377/detail/3038360">Umeng Privacy Policy</a>, <a href="https://developer.umeng.com/docs/147377/detail/214848">iOS Compliance Guide</a>, and <a href="https://outdip.umeng.com/opt_out.html">end-device opt-out</a>.</li>
           </ul>
-          <p>The SDK must not initialize or continue reporting before consent, after refusal, or after consent is withdrawn. Refusal does not restrict core pattern-tool features. We do not sell personal data or use it for targeted advertising.</p>
+          <p>The SDK must not initialize or continue reporting before consent, after refusal, or after consent is withdrawn. Refusal does not restrict core pattern-tool features. We do not sell personal data or use it to display ads in Doumen. The current SDK's Apple privacy manifest contains advertising/tracking declarations that conflict with this purpose; v1.0.6 will not be released until Umeng provides a verifiable explanation or corrected SDK and the result passes archive and on-device review.</p>
         </article>
         <article class="policy-block">
           <h3>4. Storage, Security, and Retention</h3>
@@ -355,13 +356,14 @@
             <li>PNG files may include optional project metadata and, if enabled, the original source image; sharing that file shares the embedded data.</li>
             <li>Diagnostics are stored locally unless you choose to export or send them for support.</li>
             <li>Support emails are retained only as needed to respond, maintain records, or meet legal requirements.</li>
+            <li>Umeng states that Mainland China end-user information is stored in China and retained only as needed for service purposes, business records, security/quality, and legal requirements, then deleted or anonymized; it does not publish one fixed period.</li>
           </ul>
           <p>No transmission or storage method is completely secure, and absolute security cannot be guaranteed.</p>
         </article>
         <article class="policy-block">
           <h3>5. Your Rights and Regional Notices</h3>
           <p>You may access, correct, export, or delete local projects using your device and app features. Because Doumen does not provide Xuyu Tech accounts or Xuyu Tech server-side project storage, there is no Xuyu Tech remote account deletion process.</p>
-          <p>Depending on your location, you may have additional rights under GDPR, CCPA/CPRA, PIPL, APPI, or PIPA. We do not knowingly collect personal information from children under the applicable age threshold.</p>
+          <p>You may withdraw analytics consent in app settings or contact us to exercise access, correction, deletion, or other applicable rights; we will help route Umeng-side requests. The under-14 analytics approach remains a release blocker that must be resolved before v1.0.6.</p>
         </article>
         <article class="policy-block">
           <h3>6. Contact</h3>
@@ -435,6 +437,7 @@
         </article>
       </div>
     </section>
+  </main>
   <script>
     (function () {
       var tabs = ["support", "privacy", "terms"];

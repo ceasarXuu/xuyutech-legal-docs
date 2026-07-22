@@ -1,7 +1,7 @@
 # Doumen Privacy Policy
 
 Effective Date: With the Doumen v1.0.6 release (pending)
-Developer: Xuyu Tech
+Operator: Individual developer (brand name: Xuyu Tech; identified by the developer/seller shown on the App Store product page)
 Contact Email: xuyutechnologies@outlook.com
 
 > Draft for v1.0.6. This version has not been published and is not yet effective. Legal/compliance review and the final effective date are required before release.
@@ -10,7 +10,7 @@ Doumen is a local-first bead pattern maker and editor. We designed the core work
 
 ## 1. Data We Collect
 
-By default, Doumen does not collect personally identifiable information, does not create user accounts, does not require login, and does not upload imported images, project files, or exported patterns to Xuyu Tech servers. Starting with v1.0.6, limited mobile analytics may be enabled only when the device system region is Mainland China and the user has explicitly consented, as described below.
+Doumen does not create user accounts, require login, or upload imported images, project files, or exported patterns to servers operated by the individual developer. Starting with v1.0.6, limited mobile analytics may be enabled only when the device system region is set to Mainland China and the user separately opts in. Device, network, and usage information processed for analytics may constitute personal information, as described in Section 4.
 
 If you contact us by email or another support channel, we may receive the contact information and message content you choose to provide. We use that information only to respond to feedback, support requests, or compliance matters.
 
@@ -32,16 +32,32 @@ If you disable iCloud sync, Doumen stops initiating project sync for that device
 
 ## 4. Mobile Analytics in Mainland China
 
-Doumen enables the Umeng U-App analytics SDK only when the device system region is Mainland China (`CN`). The SDK must not initialize or continue reporting before consent, after refusal, or after consent is withdrawn. Refusing analytics does not restrict Doumen's core pattern-tool features. Umeng analytics remains disabled for every other system region.
+Doumen offers the Umeng U-App analytics option only when the device system region is set to Mainland China (`CN`). This setting is used only to determine whether the Mainland China analytics option is offered; it does not mean that Doumen determines or records the user's actual geographic location. The SDK must not initialize or continue reporting before consent, after refusal, or after consent is withdrawn. Refusing analytics does not restrict Doumen's core pattern-tool features. Umeng analytics remains disabled for every other system region.
 
-Analytics is used to understand app launches, usage trends, and the effect of product improvements. Information that may be processed includes app version and channel, session and launch time, device model, operating-system version, network status, device or installation identifiers generated or accessed by the SDK, and future non-content usage events that pass product and privacy review. Doumen does not send imported images, pattern contents, project files, project names, or exported files through this SDK.
+Analytics is used for app data analysis, including launches, sessions, usage trends, the effect of product improvements, and basic anti-fraud. Based on Umeng's official iOS compliance guide, its current privacy policy, and Doumen's integration scope, the SDK may automatically process and transmit:
 
-- SDK: Umeng U-App mobile analytics (UMCommon / UMDevice)
-- Provider: Umeng+ (the applicable operating entity is identified in its then-current privacy policy)
-- Processing: necessary analytics data is collected on device and sent to Umeng's service endpoints for aggregated analysis under its service configuration; Doumen explicitly disables Umeng's overseas-domain path
-- Third-party privacy policy: <https://www.umeng.com/page/policy>
+- App information, including app version, distribution channel, and SDK version;
+- Usage information, including launch/session timing and non-content feature events that pass privacy review;
+- Device and system information, including device model, manufacturer, operating-system version, language, time zone, and disk, CPU, and battery information;
+- Network information, including IP address, network state, and internet service provider; and
+- Device or installation identifiers generated or accessed by the SDK, which on iOS may include IDFA, OpenUDID, GUID, or an Umeng device identifier.
 
-Users may withdraw analytics consent in the app settings or contact us to exercise applicable access, correction, deletion, or other privacy rights. The final data inventory, retention period, and withdrawal workflow remain subject to SDK audit and legal/compliance review before v1.0.6 is released.
+Doumen does not send imported images, pattern contents, project files, project names, or exported files through this SDK. This integration does not request location permission, enable location-based regional analytics, or enable installed-app-list analytics. If archive or on-device testing shows processing outside this list, v1.0.6 must not be released until the wording, configuration, or dependency is corrected.
+
+- SDK: Umeng Mobile Analytics SDK (U-App; current dependencies: UMCommon 7.6.4 / UMDevice 3.6.0)
+- Operator: Umeng Tongxin (Beijing) Technology Co., Ltd. (`友盟同欣（北京）科技有限公司`)
+- Registered address: Room 701-26, 7/F, No. 2 Haidian East Third Street, Haidian District, Beijing, China
+- Processing: after consent, the SDK automatically collects and transmits data to Umeng servers to produce analytics reports; Doumen disables Umeng's overseas-domain path
+- Storage scope: Umeng's current policy states that information about Mainland China end users is stored in China
+- Retention: Umeng states that it retains information only as needed for service purposes, business records, security/quality, and legal requirements, then deletes or anonymizes it; it does not publish one fixed retention period
+- Umeng Privacy Policy: <https://developer.umeng.com/docs/147377/detail/3038360>
+- iOS Compliance Guide: <https://developer.umeng.com/docs/147377/detail/214848>
+- End-device opt-out: <https://outdip.umeng.com/opt_out.html>
+- Umeng privacy contact: `Umeng_Legal@service.umeng.com`
+
+Users may withdraw analytics consent in the app settings or contact us to exercise applicable access, correction, deletion, or other privacy rights. For Umeng-side data, we will help route the request to Umeng; users may also use Umeng's end-device opt-out page or privacy email. The final data inventory, App Store privacy disclosure, retention explanation, and withdrawal workflow remain subject to SDK audit and legal/compliance review before v1.0.6 is released.
+
+> Release blocker: UMCommon 7.6.4 currently ships an Apple privacy manifest that declares advertising data, a third-party advertising purpose, and tracking. Those declarations conflict with Doumen's analytics-only, no-advertising purpose. Before release, Umeng must provide a verifiable explanation or corrected SDK, followed by archive privacy-report and on-device network verification. If this cannot be resolved, the Umeng SDK must be removed. This paragraph is a draft audit note and will be replaced by final user-facing wording after closure.
 
 ## 5. Permissions
 
@@ -62,7 +78,7 @@ If you send screenshots, exported diagnostic packages, sample files, or a suppor
 
 ## 7. Third-Party Services
 
-Doumen does not include advertising SDKs, third-party tracking SDKs, third-party crash-reporting SDKs, remote configuration SDKs, or third-party account login. Umeng U-App is enabled only within the region and consent boundary described in Section 4.
+Doumen does not display advertising or include third-party crash reporting, remote configuration, or third-party account login. Umeng U-App is enabled only within the region and consent boundary described in Section 4. Its current Apple privacy-manifest conflict is a v1.0.6 release blocker and does not authorize any expanded data use.
 
 Doumen uses Apple platform services such as Photos, Files, Vision/OCR frameworks, Share Sheet, App Store distribution, and optional iCloud. Those services are governed by Apple's terms and privacy policy.
 
