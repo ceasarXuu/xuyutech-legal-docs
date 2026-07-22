@@ -1,14 +1,16 @@
 # Doumen Privacy Policy
 
-Effective Date: June 18, 2026
+Effective Date: With the Doumen v1.0.6 release (pending)
 Developer: Xuyu Tech
 Contact Email: xuyutechnologies@outlook.com
+
+> Draft for v1.0.6. This version has not been published and is not yet effective. Legal/compliance review and the final effective date are required before release.
 
 Doumen is a local-first bead pattern maker and editor. We designed the core workflow to work without registration, login, or developer-operated image uploads. Some optional features, such as iCloud sync, use Apple system services only when you enable or trigger them.
 
 ## 1. Data We Collect
 
-By default, Doumen does not collect personally identifiable information, does not create user accounts, does not require login, and does not upload imported images, project files, or exported patterns to Xuyu Tech servers.
+By default, Doumen does not collect personally identifiable information, does not create user accounts, does not require login, and does not upload imported images, project files, or exported patterns to Xuyu Tech servers. Starting with v1.0.6, limited mobile analytics may be enabled only when the device system region is Mainland China and the user has explicitly consented, as described below.
 
 If you contact us by email or another support channel, we may receive the contact information and message content you choose to provide. We use that information only to respond to feedback, support requests, or compliance matters.
 
@@ -28,7 +30,20 @@ iCloud sync is off unless you enable it or participate in a test build where syn
 
 If you disable iCloud sync, Doumen stops initiating project sync for that device. Data that was already stored in iCloud may remain in your iCloud account until removed by app cleanup behavior, device/iCloud settings, or Apple's retention rules.
 
-## 4. Permissions
+## 4. Mobile Analytics in Mainland China
+
+Doumen enables the Umeng U-App analytics SDK only when the device system region is Mainland China (`CN`). The SDK must not initialize or continue reporting before consent, after refusal, or after consent is withdrawn. Refusing analytics does not restrict Doumen's core pattern-tool features. Umeng analytics remains disabled for every other system region.
+
+Analytics is used to understand app launches, usage trends, and the effect of product improvements. Information that may be processed includes app version and channel, session and launch time, device model, operating-system version, network status, device or installation identifiers generated or accessed by the SDK, and future non-content usage events that pass product and privacy review. Doumen does not send imported images, pattern contents, project files, project names, or exported files through this SDK.
+
+- SDK: Umeng U-App mobile analytics (UMCommon / UMDevice)
+- Provider: Umeng+ (the applicable operating entity is identified in its then-current privacy policy)
+- Processing: necessary analytics data is collected on device and sent to Umeng's service endpoints for aggregated analysis under its service configuration; Doumen explicitly disables Umeng's overseas-domain path
+- Third-party privacy policy: <https://www.umeng.com/page/policy>
+
+Users may withdraw analytics consent in the app settings or contact us to exercise applicable access, correction, deletion, or other privacy rights. The final data inventory, retention period, and withdrawal workflow remain subject to SDK audit and legal/compliance review before v1.0.6 is released.
+
+## 5. Permissions
 
 Doumen may request the following system permissions:
 
@@ -39,21 +54,21 @@ Doumen may request the following system permissions:
 
 We do not use these permissions for unrelated purposes.
 
-## 5. Diagnostics and Support
+## 6. Diagnostics and Support
 
 Doumen includes local diagnostics to help verify imports, exports, background removal, OCR, making sessions, and iCloud sync behavior. These diagnostics are intended to avoid raw project content where possible and are stored locally unless you choose to share them for support.
 
 If you send screenshots, exported diagnostic packages, sample files, or a support email to us, we use that information only to investigate the issue, respond to your request, maintain support records, or meet legal obligations.
 
-## 6. Third-Party Services
+## 7. Third-Party Services
 
-Doumen does not include advertising SDKs, third-party analytics SDKs, third-party tracking SDKs, third-party crash-reporting SDKs, remote configuration SDKs, or third-party account login by default.
+Doumen does not include advertising SDKs, third-party tracking SDKs, third-party crash-reporting SDKs, remote configuration SDKs, or third-party account login. Umeng U-App is enabled only within the region and consent boundary described in Section 4.
 
 Doumen uses Apple platform services such as Photos, Files, Vision/OCR frameworks, Share Sheet, App Store distribution, and optional iCloud. Those services are governed by Apple's terms and privacy policy.
 
 Before each release, the codebase and dependencies should be checked again. If advertising, analytics, crash reporting, remote configuration, community features, accounts, or developer-operated cloud services are added, this Privacy Policy and the App Store privacy details must be updated.
 
-## 7. Data Retention and Deletion
+## 8. Data Retention and Deletion
 
 Local projects, exported files, and images saved to Photos are managed by you on your device. You can delete projects inside the app, and you can delete exported content from Photos, Files, or other destinations where you saved it. Exported files that you have already shared are managed by the recipient or destination platform, and Doumen cannot delete them remotely.
 
@@ -61,19 +76,19 @@ Uninstalling Doumen usually removes project data stored in the app sandbox, but 
 
 Because Doumen does not provide Xuyu Tech accounts or Xuyu Tech server-side project storage, there is no Xuyu Tech remote account deletion process.
 
-## 8. Children's Privacy
+## 9. Children's Privacy
 
 Doumen is intended for general craft and creative use. We do not knowingly collect personal information from children. If a parent or guardian believes that a child has provided personal information to us, please contact us using the details below.
 
-## 9. User Content and Copyright
+## 10. User Content and Copyright
 
 You are responsible for ensuring that you have the right to use images you import into Doumen. Doumen provides local conversion, editing, and export tools and does not review the copyright status of imported images.
 
-## 10. Changes to This Policy
+## 11. Changes to This Policy
 
 If Doumen later adds accounts, community features, analytics, crash reporting, advertising, developer-operated cloud services, or other network services, we will update this Privacy Policy and, when required, the App Store privacy details.
 
-## 11. Contact Us
+## 12. Contact Us
 
 If you have questions about this Privacy Policy or Doumen's data practices, contact us at:
 
