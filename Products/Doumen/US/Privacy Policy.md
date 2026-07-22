@@ -101,7 +101,9 @@ Because Doumen does not provide Xuyu Tech accounts or Xuyu Tech server-side proj
 
 ## 9. Children's Privacy
 
-Doumen is intended for general craft and creative use. We do not knowingly collect personal information from children. If a parent or guardian believes that a child has provided personal information to us, please contact us using the details below.
+Doumen is intended for general craft and creative use and has a 4+ age rating on the App Store. That rating describes content suitability; it does not mean that Doumen identifies a user's age or automatically obtains parental or guardian consent. Doumen does not ask for a date of birth or age and does not implement age recognition, age gating, or profiling of minors.
+
+For a user under 14, a parent or guardian should review this policy and the analytics notice and decide whether to consent to optional Umeng analytics. The parent or guardian may choose “Decline” without affecting core app features. If a parent or guardian believes that analytics information about a user under 14 was processed without their consent, they may contact us. We will stop further processing and, after verification, help submit a deletion request to Umeng. We will not introduce routine age collection solely to handle such requests.
 
 ## 10. User Content and Copyright
 

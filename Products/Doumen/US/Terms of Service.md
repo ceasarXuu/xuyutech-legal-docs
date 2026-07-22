@@ -20,6 +20,8 @@ Doumen provides features to:
 
 Doumen does not provide Xuyu Tech accounts, community publishing, online asset libraries, or bead purchasing services.
 
+Doumen has a 4+ age rating on the App Store. Doumen does not collect or identify a user's age and does not impose a product age gate. Parents or guardians should provide guidance to minors as required by applicable law; the 4+ content rating does not itself establish parental or guardian consent. The Privacy Policy describes how optional analytics is handled for users under 14.
+
 ## 2. Local-First Use and User Responsibility
 
 Doumen primarily processes images and projects on your device. You are responsible for managing your device, project files, exported files, iCloud settings, and backups.
