@@ -1,6 +1,6 @@
 # Doumen Privacy Policy
 
-Last Updated: July 22, 2026
+Last Updated: August 30, 2026
 Operator: ZhangXu (Chinese name: 张旭; brand name: Xuyu Tech)
 Contact: xuyutechnologies@outlook.com
 
@@ -20,7 +20,11 @@ If you enable iCloud sync, project files, source assets, and sync metadata are s
 
 After sync is disabled, the current device stops syncing. Data already stored in iCloud remains under your control through Doumen, device settings, or iCloud. Apple processes this data under its terms and privacy policy.
 
-## 3. System Permissions
+## 3. Extracting Images from Share Links
+
+When you choose to extract images from a share link, Doumen requests the linked content and downloads images directly from the source platform and its image services. Those services receive the link information needed for the request (which may include a share token), your IP address, and network information such as request headers, and process it under their own rules. Doumen does not relay these requests through developer-operated servers; pattern recognition and editing remain on device. Saving images to Photos depends on your selection and system permission.
+
+## 4. System Permissions
 
 Doumen uses the following system features only when required for the related function:
 
@@ -29,7 +33,7 @@ Doumen uses the following system features only when required for the related fun
 - File and sharing features: import, save, or share files; and
 - iCloud: sync projects after you enable sync.
 
-## 4. Retention, Deletion, and Your Rights
+## 5. Retention, Deletion, and Your Rights
 
 You manage local projects and diagnostic records on your device. Uninstalling Doumen usually removes data in the app sandbox. Content saved to Photos, Files, iCloud, or shared with others must be managed or deleted in those locations.
 
@@ -37,7 +41,7 @@ Support email is retained only as needed to respond, maintain necessary records,
 
 You can access, export, correct, or delete local data through Doumen and system features. You may also contact us to request access, correction, deletion, or other applicable privacy rights.
 
-## 5. Policy Updates and Contact
+## 6. Policy Updates and Contact
 
 If our information practices change materially, we will update this policy and seek consent again where required by law.
 

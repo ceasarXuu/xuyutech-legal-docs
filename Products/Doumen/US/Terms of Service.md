@@ -1,6 +1,6 @@
 # Doumen Terms of Service
 
-Effective Date: June 18, 2026
+Last Updated: August 30, 2026
 Developer: ZhangXu (Chinese name: 张旭; brand name: Xuyu Tech)
 Contact Email: xuyutechnologies@outlook.com
 
@@ -11,6 +11,7 @@ Welcome to Doumen. Doumen is a local-first tool for generating, recognizing, edi
 Doumen provides features to:
 
 - Generate bead patterns from local images.
+- Extract images from share links and import them as patterns.
 - Import existing pattern images with crop, color, and OCR-assisted recognition tools.
 - Match colors against common bead color chart data.
 - Edit grid cells, replace colors, erase empty areas, and use assisted background cleanup.
@@ -27,6 +28,8 @@ Minors should use Doumen under the guidance of a parent or guardian.
 Doumen primarily processes images and projects on your device. You are responsible for managing your device, project files, exported files, iCloud settings, and backups.
 
 You must ensure that you have the right to use any images, patterns, text, or other content you import into Doumen. You may not use Doumen to process, create, or distribute illegal, infringing, or rights-violating content.
+
+Only import images you own or have permission to use, and comply with the source platform's terms of service. Copyright remains with the respective rights holders. Importing, editing, or exporting an image does not grant you additional rights to use or distribute it. Do not use this feature to infringe others' rights.
 
 If you enable iCloud sync, you are responsible for using the intended Apple ID, reviewing account-change prompts, resolving conflicts carefully, and understanding that Apple iCloud availability and retention are governed by Apple's own services.
 
