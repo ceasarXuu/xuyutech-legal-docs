@@ -1,6 +1,6 @@
 # Doumen Privacy Policy
 
-Last Updated: September 19, 2026
+Last Updated: October 20, 2026
 Operator: ZhangXu (Chinese name: 张旭; brand name: Xuyu Tech)
 Contact: xuyutechnologies@outlook.com
 
@@ -10,9 +10,23 @@ Doumen is a local-first bead pattern maker and editor. This policy explains how 
 
 Doumen does not require registration or login. Images you import, patterns you create, project names, edits, inventory and making progress, export settings, and language and appearance preferences are stored on your device by default and are not uploaded to developer-operated servers.
 
-Image cropping, color sampling, OCR-assisted import, and background cleanup are performed on your device. Diagnostic records remain local unless you choose to email us screenshots, diagnostic files, or other materials. We use information you send only to handle your request.
+Image cropping, color sampling, OCR-assisted import, and background cleanup are performed on your device. Diagnostic records remain local by default; you can choose to send diagnostics through Report a Problem in the app or separately email materials to support.
 
 Exported PNG files may contain project data and the source image. If you share such a file, its embedded data is shared with it.
+
+### User-Initiated Diagnostic Feedback
+
+Only when you tap Send in Doumen’s Report a Problem form does Doumen send the permitted diagnostic records and your optional problem description and contact email to the diagnostic service. Neither a description nor an email address is required. Diagnostics are not uploaded automatically or silently. Materials you separately email to support are used only to handle your request.
+
+Diagnostic records may include app and OS versions, device model, random run/page/action associations, fixed operation and error codes, counts and durations, resource summaries, source-image dimensions and byte counts, normalized crop bounds, complete import links from supported sources, manual review coordinates and color-confirmation or undo records, and backup identifiers and snapshot times used to connect troubleshooting evidence. Sync diagnostics may also include anonymous object and content associations within one session, file-role categories, validation rules, and lifecycle categories, format versions, and necessary counts for local, remote, and previous-sync states. Sync object and content associations in feedback change between sessions; original project or cloud-record identifiers, original content hashes, account identities, and sync credentials are not sent. Complete import links may contain access tokens; please do not publish a feedback report. Feedback does not upload source images or project files. The new system summaries do not include raw system logs, call stacks, or arbitrary exception text.
+
+OS-provided crash, hang, and exit-category summaries may cover approximately the previous 24 hours or older delayed reports. Their coverage interval, receipt time, and source build are recorded separately. They do not establish that an event occurred during your current action or app run, and missing records do not establish that no problem occurred.
+
+Ordinary on-device diagnostics use a rolling 30-minute window. System summaries are retained only if received within 30 minutes, although their original OS coverage period may be older. Sanitized summaries and limited direct evidence of allowlisted startup upgrade failures, local data mount failures, and data-version protection blocks that ultimately prevent access to the app, as well as sync failures, may be retained locally for up to seven days. This does not extend the full activity history. Startup blocks and sync failures are recorded separately; sync cancellation and ordinary account or inventory selection prompts do not qualify for seven-day retention on that basis. A summary expires seven days after that failure is first recorded; each item of direct evidence expires seven days after its original occurrence. Repeated failures do not renew these periods, and recovery does not reset them. A genuinely successful sync may record recovery; dismissing a prompt does not establish recovery.
+
+Seven-day failure summaries may include fixed failure and error codes, necessary migration or sync state, source builds, random incident or session associations, first and last recorded times, repeat counts, and recovery results. Limited sync-failure evidence may also contain the anonymous object and content associations within one session described above. They do not include arbitrary exception text, raw call stacks, project names, file paths, accounts, persistent device or project identifiers, original cloud-record identifiers, original content hashes, sync credentials, complete import links, source images, or project files. The startup-block area and sync-failure area each hold at most 16 incidents, each with at most 16 direct evidence records, and each area is limited to 512 KiB. Startup-block incidents are also limited to 32 KiB each. Ordinary events, system summaries, both types of failure records, and pending snapshots share a maximum local allowance of 2 MiB; storage pressure may remove records earlier. When the app is not running, physical files cannot be cleaned up at their exact expiry time. Cleanup runs first on the next launch, and expired records are not sent again.
+
+Reports still upload only when you tap Send and are used only for restricted internal troubleshooting. Server rules remain unchanged: reports are retained for seven days after server receipt, become unavailable to internal readers on expiry, and are removed by scheduled cleanup. The local and server retention periods start separately, so the server retention period may end nearly fourteen days after the original failure. Only a minimal used-report-code marker is kept long term to prevent an old code from referring to another report.
 
 ## 2. Optional iCloud Sync
 
@@ -60,7 +74,7 @@ Doumen uses the following system features only when required for the related fun
 
 ## 6. Retention, Deletion, and Your Rights
 
-You manage local projects and diagnostic records on your device. Uninstalling Doumen usually removes data in the app sandbox. Content saved to Photos, Files, iCloud, or shared with others must be managed or deleted in those locations.
+You manage local projects on your device; diagnostic records and submitted reports follow the windows and retention periods above. Uninstalling Doumen usually removes data in the app sandbox. Content saved to Photos, Files, iCloud, or shared with others must be managed or deleted in those locations.
 
 Support email is retained only as needed to respond, maintain necessary records, or meet legal obligations.
 
