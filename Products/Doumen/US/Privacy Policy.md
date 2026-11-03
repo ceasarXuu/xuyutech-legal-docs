@@ -1,6 +1,6 @@
 # Doumen Privacy Policy
 
-Last Updated: October 20, 2026
+Last Updated: November 4, 2026
 Operator: ZhangXu (Chinese name: 张旭; brand name: Xuyu Tech)
 Contact: xuyutechnologies@outlook.com
 
@@ -17,6 +17,8 @@ Exported PNG files may contain project data and the source image. If you share s
 ### User-Initiated Diagnostic Feedback
 
 Only when you tap Send in Doumen’s Report a Problem form does Doumen send the permitted diagnostic records and your optional problem description and contact email to the diagnostic service. Neither a description nor an email address is required. Diagnostics are not uploaded automatically or silently. Materials you separately email to support are used only to handle your request.
+
+In iOS versions that support installation association, a report you choose to send may also contain a SHA-256 digest of this installation’s credential, used to associate reports from the same installation. Doumen reuses the existing local sharing credential; if it is missing when you first open feedback, the existing mechanism creates it locally, without creating a separate diagnostic identity or sending the credential itself. This field belongs to the report environment, not to the failure-event summaries described below. It is neither an account nor a permanent hardware identity, and reinstalling, clearing data, or device migration may affect association. The field can be omitted if the credential is unavailable or retrieval times out, without preventing feedback. The local credential follows its existing retention mechanism; the digest is uploaded only when you choose to send a report, retained with that report for the seven-day period below, and not used for advertising tracking.
 
 Diagnostic records may include app and OS versions, device model, random run/page/action associations, fixed operation and error codes, counts and durations, resource summaries, source-image dimensions and byte counts, normalized crop bounds, complete import links from supported sources, manual review coordinates and color-confirmation or undo records, and backup identifiers and snapshot times used to connect troubleshooting evidence. Sync diagnostics may also include anonymous object and content associations within one session, file-role categories, validation rules, and lifecycle categories, format versions, and necessary counts for local, remote, and previous-sync states. Sync object and content associations in feedback change between sessions; original project or cloud-record identifiers, original content hashes, account identities, and sync credentials are not sent. Complete import links may contain access tokens; please do not publish a feedback report. Feedback does not upload source images or project files. The new system summaries do not include raw system logs, call stacks, or arbitrary exception text.
 
