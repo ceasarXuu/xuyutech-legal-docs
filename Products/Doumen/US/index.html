@@ -284,15 +284,17 @@
       <div class="section-head">
         <div>
           <h2>Privacy Policy</h2>
-          <p class="section-subtitle">Last Updated: November 12, 2026</p>
+          <p class="section-subtitle">Last Updated: November 13, 2026</p>
         </div>
       </div>
       <div class="policy-body">
         <article class="policy-block">
           <h3>1. On-Device Processing</h3>
           <p>Doumen is operated by the individual developer ZhangXu (Chinese name: 张旭; brand name: Xuyu Tech) and does not require registration or login.</p>
-          <p>Images you import, patterns you create, project names, edits, inventory and making progress, export settings, and language and appearance preferences are stored on your device by default and are not uploaded to developer-operated servers. Image cropping, color sampling, OCR-assisted import, and background cleanup are also performed on your device.</p>
+          <p>Images you import, patterns you create, project names, edits, inventory and making progress, export settings, and language and appearance preferences are stored on your device by default. Image cropping, color sampling, OCR-assisted import, and background cleanup are also performed on your device.</p>
           <p>Diagnostic records remain local by default; you can choose to send diagnostics through Report a Problem in the app or separately email materials to support. Exported PNG files may contain project data and the source image; sharing the file also shares its embedded data.</p>
+          <h4>User-Initiated Share Codes</h4>
+          <p>When you choose to create a share code, the encoded data for the selected pattern, including its dimensions, palette, and grid contents, is uploaded to the Doumen sharing service to create the code and allow people with the code to retrieve the pattern. The sharing service receives the IP address of network requests. A randomly generated installation credential used to manage shares is stored on your device and provided in related requests.</p>
           <h4>User-Initiated Diagnostic Feedback</h4>
           <p>Only when you tap Send in Doumen’s Report a Problem form does Doumen send the permitted diagnostic records and your optional problem description and contact email to the diagnostic service. Neither a description nor an email address is required. Diagnostics are not uploaded automatically or silently. Materials you separately email to support are used only to handle your request.</p>
           <p>In iOS versions that support installation association, a report you choose to send may also contain a SHA-256 digest of this installation’s credential, used to associate reports from the same installation. Doumen reuses the existing local sharing credential; if it is missing when you first open feedback, the existing mechanism creates it locally, without creating a separate diagnostic identity or sending the credential itself. This field belongs to the report environment, not to the failure-event summaries described below. It is neither an account nor a permanent hardware identity, and reinstalling, clearing data, or device migration may affect association. The field can be omitted if the credential is unavailable or retrieval times out, without preventing feedback. The local credential follows its existing retention mechanism; the digest is uploaded only when you choose to send a report, retained with that report for the seven-day period below, and not used for advertising tracking.</p>
@@ -303,8 +305,8 @@
           <p>Reports still upload only when you tap Send and are used only for restricted internal troubleshooting. Server rules remain unchanged: reports are retained for seven days after server receipt, become unavailable to internal readers on expiry, and are removed by scheduled cleanup. The local and server retention periods start separately, so the server retention period may end nearly fourteen days after the original failure. Only a minimal used-report-code marker is kept long term to prevent an old code from referring to another report.</p>
         </article>
         <article class="policy-block">
-          <h3>2. Optional iCloud Sync</h3>
-          <p>If you enable iCloud sync, project files, source assets, and sync metadata are stored in your iCloud account through Apple services. Doumen does not operate a separate project-sync server and does not receive your iCloud project content through this feature.</p>
+          <h3>2. Optional iCloud Sync on iOS/iPadOS</h3>
+          <p>iCloud sync is available only on iOS/iPadOS; the Android version does not provide iCloud sync. If you enable iCloud sync on iOS/iPadOS, project files, source assets, and sync metadata are stored in your iCloud account through Apple services. Doumen does not operate a separate project-sync server and does not receive your iCloud project content through this feature.</p>
           <p>After sync is disabled, the current device stops syncing. Data already stored in iCloud remains under your control through Doumen, device settings, or iCloud. Apple processes this data under its terms and privacy policy.</p>
         </article>
         <article class="policy-block">
@@ -343,12 +345,12 @@
             <li>System photo or file picker: choose images to process;</li>
             <li>Photo-library add permission: save exported images to Photos;</li>
             <li>File and sharing features: import, save, or share files; and</li>
-            <li>iCloud: sync projects after you enable sync.</li>
+            <li>iCloud (iOS/iPadOS only): sync projects after you enable sync.</li>
           </ul>
         </article>
         <article class="policy-block">
           <h3>6. Retention, Deletion, and Your Rights</h3>
-          <p>You manage local projects on your device; diagnostic records and submitted reports follow the windows and retention periods above. Uninstalling Doumen usually removes data in the app sandbox. Content saved to Photos, Files, iCloud, or shared with others must be managed or deleted in those locations. Support email is retained only as needed to respond, maintain necessary records, or meet legal obligations.</p>
+          <p>You manage local projects on your device; diagnostic records and submitted reports follow the windows and retention periods above. Uninstalling Doumen usually removes data in the app sandbox. Content saved to Photos, Files, iCloud on iOS/iPadOS, or shared with others must be managed or deleted in those locations. Support email is retained only as needed to respond, maintain necessary records, or meet legal obligations.</p>
           <p>You can access, export, correct, or delete local data through Doumen and system features. You may also contact us to request access, correction, deletion, or other applicable privacy rights.</p>
           <h4>Children's Personal Information</h4>
           <p>If a user is under 14, their parent or other guardian should read this policy with them and decide whether to consent before their personal information is processed. The relevant sections of this policy describe the purposes, methods, types, third parties, and specified retention periods for information processing. A guardian may use the contact email below to request access, correction, deletion, withdrawal of consent, or to make a complaint.</p>
@@ -365,7 +367,7 @@
       <div class="section-head">
         <div>
           <h2>Terms of Service</h2>
-          <p class="section-subtitle">Last Updated: August 30, 2026</p>
+          <p class="section-subtitle">Last Updated: November 13, 2026</p>
         </div>
       </div>
       <div class="policy-body">
@@ -386,7 +388,7 @@
         </article>
         <article class="policy-block">
           <h3>3. Permitted and Prohibited Uses</h3>
-          <p>You may use Doumen to extract images from share links, generate bead patterns from local images, import existing pattern images with crop/color/OCR assistance, edit patterns, save and duplicate local projects, track inventory inputs, manage making-session progress, optionally sync projects through Apple iCloud, and export PNG/PDF pattern sheets.</p>
+          <p>You may use Doumen to extract images from share links, generate bead patterns from local images, import existing pattern images with crop/color/OCR assistance, edit patterns, save and duplicate local projects, track inventory inputs, manage making-session progress, optionally sync projects through Apple iCloud on iOS/iPadOS, and export PNG/PDF pattern sheets.</p>
           <ul>
             <li>Do not use the app for illegal or unauthorized purposes.</li>
             <li>Do not reverse engineer, derive source code, or circumvent security controls.</li>
@@ -399,7 +401,7 @@
           <ul>
             <li>You are responsible for the images, patterns, and files you import, create, save, export, or share.</li>
             <li>Only import images you own or have permission to use, and comply with the source platform's terms of service. Copyright remains with the respective rights holders. Importing, editing, or exporting an image does not grant you additional rights to use or distribute it. Do not use this feature to infringe others' rights.</li>
-            <li>Doumen stores projects locally by default and may optionally sync project data through Apple iCloud when you enable iCloud sync.</li>
+            <li>Doumen stores projects locally by default. On iOS/iPadOS, it may optionally sync project data through Apple iCloud when you enable iCloud sync.</li>
             <li>Doumen does not provide Xuyu Tech accounts, community publishing, online asset libraries, or bead purchasing services.</li>
             <li>Apple system services such as Photos, Files, and App Store distribution are governed by Apple's own terms and policies.</li>
             <li>Color matching, OCR/import recognition, background cleanup, inventory estimates, making progress, and bead usage counts are craft references and may vary due to image quality, display differences, OCR errors, bead batches, lighting, and manual edits.</li>

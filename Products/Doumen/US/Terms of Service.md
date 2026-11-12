@@ -1,6 +1,6 @@
 # Doumen Terms of Service
 
-Last Updated: August 30, 2026
+Last Updated: November 13, 2026
 Developer: ZhangXu (Chinese name: 张旭; brand name: Xuyu Tech)
 Contact Email: xuyutechnologies@outlook.com
 
@@ -17,7 +17,7 @@ Doumen provides features to:
 - Edit grid cells, replace colors, erase empty areas, and use assisted background cleanup.
 - Save local projects, duplicate projects, track inventory inputs, and manage making-session progress.
 - Export pattern sheets and usage information as PNG, PDF, or other supported formats.
-- Optionally sync project data through Apple iCloud when the iCloud sync setting is enabled.
+- On iOS/iPadOS, optionally sync project data through Apple iCloud when the iCloud sync setting is enabled.
 
 Doumen does not provide Xuyu Tech accounts, community publishing, online asset libraries, or bead purchasing services.
 

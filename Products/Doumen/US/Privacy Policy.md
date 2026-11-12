@@ -1,6 +1,6 @@
 # Doumen Privacy Policy
 
-Last Updated: November 12, 2026
+Last Updated: November 13, 2026
 Operator: ZhangXu (Chinese name: 张旭; brand name: Xuyu Tech)
 Contact: xuyutechnologies@outlook.com
 
@@ -8,11 +8,15 @@ Doumen is a local-first bead pattern maker and editor. This policy explains how 
 
 ## 1. On-Device Processing
 
-Doumen does not require registration or login. Images you import, patterns you create, project names, edits, inventory and making progress, export settings, and language and appearance preferences are stored on your device by default and are not uploaded to developer-operated servers.
+Doumen does not require registration or login. Images you import, patterns you create, project names, edits, inventory and making progress, export settings, and language and appearance preferences are stored on your device by default.
 
 Image cropping, color sampling, OCR-assisted import, and background cleanup are performed on your device. Diagnostic records remain local by default; you can choose to send diagnostics through Report a Problem in the app or separately email materials to support.
 
 Exported PNG files may contain project data and the source image. If you share such a file, its embedded data is shared with it.
+
+### User-Initiated Share Codes
+
+When you choose to create a share code, the encoded data for the selected pattern, including its dimensions, palette, and grid contents, is uploaded to the Doumen sharing service to create the code and allow people with the code to retrieve the pattern. The sharing service receives the IP address of network requests. A randomly generated installation credential used to manage shares is stored on your device and provided in related requests.
 
 ### User-Initiated Diagnostic Feedback
 
@@ -30,9 +34,9 @@ Seven-day failure summaries may include fixed failure and error codes, necessary
 
 Reports still upload only when you tap Send and are used only for restricted internal troubleshooting. Server rules remain unchanged: reports are retained for seven days after server receipt, become unavailable to internal readers on expiry, and are removed by scheduled cleanup. The local and server retention periods start separately, so the server retention period may end nearly fourteen days after the original failure. Only a minimal used-report-code marker is kept long term to prevent an old code from referring to another report.
 
-## 2. Optional iCloud Sync
+## 2. Optional iCloud Sync on iOS/iPadOS
 
-If you enable iCloud sync, project files, source assets, and sync metadata are stored in your iCloud account through Apple services. Doumen does not operate a separate project-sync server and does not receive your iCloud project content through this feature.
+iCloud sync is available only on iOS/iPadOS; the Android version does not provide iCloud sync. If you enable iCloud sync on iOS/iPadOS, project files, source assets, and sync metadata are stored in your iCloud account through Apple services. Doumen does not operate a separate project-sync server and does not receive your iCloud project content through this feature.
 
 After sync is disabled, the current device stops syncing. Data already stored in iCloud remains under your control through Doumen, device settings, or iCloud. Apple processes this data under its terms and privacy policy.
 
@@ -76,11 +80,11 @@ Doumen uses the following system features only when required for the related fun
 - System photo or file picker: choose images to process;
 - Photo-library add permission: save exported images to Photos;
 - File and sharing features: import, save, or share files; and
-- iCloud: sync projects after you enable sync.
+- iCloud (iOS/iPadOS only): sync projects after you enable sync.
 
 ## 6. Retention, Deletion, and Your Rights
 
-You manage local projects on your device; diagnostic records and submitted reports follow the windows and retention periods above. Uninstalling Doumen usually removes data in the app sandbox. Content saved to Photos, Files, iCloud, or shared with others must be managed or deleted in those locations.
+You manage local projects on your device; diagnostic records and submitted reports follow the windows and retention periods above. Uninstalling Doumen usually removes data in the app sandbox. Content saved to Photos, Files, iCloud on iOS/iPadOS, or shared with others must be managed or deleted in those locations.
 
 Support email is retained only as needed to respond, maintain necessary records, or meet legal obligations.
 
