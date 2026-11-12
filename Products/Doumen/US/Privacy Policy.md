@@ -4,7 +4,7 @@ Last Updated: November 13, 2026
 Operator: ZhangXu (Chinese name: 张旭; brand name: Xuyu Tech)
 Contact: xuyutechnologies@outlook.com
 
-Doumen is a local-first bead pattern maker and editor. This policy applies to Doumen for iOS/iPadOS and explains how Doumen handles your information and how you can manage it. For the Android version, see the [Android Privacy Policy](https://doumen.work/en/blog/android/privacy/).
+Doumen is a local-first bead pattern maker and editor. This policy applies to Doumen for iOS/iPadOS and explains how Doumen handles your information and how you can manage it. For the Android version, see the [Android Privacy Policy](https://doumen.work/en/android/privacy/).
 
 ## 1. On-Device Processing
 
