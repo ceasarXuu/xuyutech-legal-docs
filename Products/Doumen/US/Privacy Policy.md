@@ -1,6 +1,6 @@
 # Doumen Privacy Policy
 
-Last Updated: November 4, 2026
+Last Updated: November 12, 2026
 Operator: ZhangXu (Chinese name: 张旭; brand name: Xuyu Tech)
 Contact: xuyutechnologies@outlook.com
 
@@ -38,7 +38,7 @@ After sync is disabled, the current device stops syncing. Data already stored in
 
 ## 3. Analytics
 
-Doumen enables Umeng (U-App) mobile analytics only after you agree. If you do not agree, the SDK is not initialized. If you decline, Doumen exits and you can open it again to choose.
+Doumen enables Umeng (U-App) mobile analytics only after you agree. The Android version may call Umeng pre-initialization before you agree; according to Umeng, this step does not collect or transmit device information. Umeng is fully initialized after you agree. If you decline, Doumen exits and you can open it again to choose.
 
 Umeng analytics is used to understand app launches, sessions, and feature usage so we can improve the product and perform basic anti-fraud checks. The information that may be processed includes:
 
@@ -46,7 +46,7 @@ Umeng analytics is used to understand app launches, sessions, and feature usage 
 - Usage information: launch time, session duration, and feature events that do not include images, patterns, or project content;
 - Device and system information: device model, operating system version, language, time zone, disk, CPU, and battery information;
 - Network information: IP address, network status, and network service provider;
-- Device or installation identifiers: which may include IDFA, OpenUDID, GUID, or the Umeng device identifier.
+- Device or installation identifiers: which may include Android ID, OAID (on Android devices), IDFA, OpenUDID, GUID, or the Umeng device identifier.
 
 Doumen does not upload your imported images, pattern content, project files, project names, or exported files through Umeng, and does not collect precise location or a list of installed apps through Umeng.
 
@@ -65,6 +65,10 @@ We require third parties to protect your information in accordance with this pol
 
 When you choose to extract images from a share link, Doumen requests the linked content and downloads images directly from the source platform and its image services. Those services receive the link information needed for the request (which may include a share token), your IP address, and network information such as request headers, and process it under their own rules. Doumen does not relay these requests through developer-operated servers; pattern recognition and editing remain on device. Saving images to Photos depends on your selection and system permission.
 
+### Announcement Requests
+
+Versions of Doumen that support announcements request them from the announcement service, for example when refreshing on the home screen or returning to the foreground. The request includes the app version, release channel, operating system version, and device model; the server also receives the IP address needed for the network request.
+
 ## 5. System Permissions
 
 Doumen uses the following system features only when required for the related function:
@@ -81,6 +85,12 @@ You manage local projects on your device; diagnostic records and submitted repor
 Support email is retained only as needed to respond, maintain necessary records, or meet legal obligations.
 
 You can access, export, correct, or delete local data through Doumen and system features. You may also contact us to request access, correction, deletion, or other applicable privacy rights.
+
+### Children's Personal Information
+
+If a user is under 14, their parent or other guardian should read this policy with them and decide whether to consent before their personal information is processed. The relevant sections of this policy describe the purposes, methods, types, third parties, and specified retention periods for information processing. A guardian may use the contact email below to request access, correction, deletion, withdrawal of consent, or to make a complaint.
+
+Doumen does not request a date of birth or age and does not use age identification, age gates, or profiling of minors.
 
 ## 7. Policy Updates and Contact
 
