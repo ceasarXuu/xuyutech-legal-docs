@@ -1,10 +1,10 @@
-# Doumen Privacy Policy
+# Doumen Privacy Policy (iOS/iPadOS)
 
 Last Updated: November 13, 2026
 Operator: ZhangXu (Chinese name: 张旭; brand name: Xuyu Tech)
 Contact: xuyutechnologies@outlook.com
 
-Doumen is a local-first bead pattern maker and editor. This policy explains how Doumen handles your information and how you can manage it.
+Doumen is a local-first bead pattern maker and editor. This policy applies to Doumen for iOS/iPadOS and explains how Doumen handles your information and how you can manage it. For the Android version, see the [Android Privacy Policy](https://doumen.work/en/blog/android/privacy/).
 
 ## 1. On-Device Processing
 
@@ -36,13 +36,13 @@ Reports still upload only when you tap Send and are used only for restricted int
 
 ## 2. Optional iCloud Sync on iOS/iPadOS
 
-iCloud sync is available only on iOS/iPadOS; the Android version does not provide iCloud sync. If you enable iCloud sync on iOS/iPadOS, project files, source assets, and sync metadata are stored in your iCloud account through Apple services. Doumen does not operate a separate project-sync server and does not receive your iCloud project content through this feature.
+If you enable iCloud sync on iOS/iPadOS, project files, source assets, and sync metadata are stored in your iCloud account through Apple services. Doumen does not operate a separate project-sync server and does not receive your iCloud project content through this feature.
 
 After sync is disabled, the current device stops syncing. Data already stored in iCloud remains under your control through Doumen, device settings, or iCloud. Apple processes this data under its terms and privacy policy.
 
 ## 3. Analytics
 
-Doumen enables Umeng (U-App) mobile analytics only after you agree. The Android version may call Umeng pre-initialization before you agree; according to Umeng, this step does not collect or transmit device information. Umeng is fully initialized after you agree. If you decline, Doumen exits and you can open it again to choose.
+Doumen enables Umeng (U-App) mobile analytics only after you agree. If you decline, Doumen exits and you can open it again to choose.
 
 Umeng analytics is used to understand app launches, sessions, and feature usage so we can improve the product and perform basic anti-fraud checks. The information that may be processed includes:
 
@@ -50,7 +50,7 @@ Umeng analytics is used to understand app launches, sessions, and feature usage 
 - Usage information: launch time, session duration, and feature events that do not include images, patterns, or project content;
 - Device and system information: device model, operating system version, language, time zone, disk, CPU, and battery information;
 - Network information: IP address, network status, and network service provider;
-- Device or installation identifiers: which may include Android ID, OAID (on Android devices), IDFA, OpenUDID, GUID, or the Umeng device identifier.
+- Device or installation identifiers: which may include IDFA, OpenUDID, GUID, or the Umeng device identifier.
 
 Doumen does not upload your imported images, pattern content, project files, project names, or exported files through Umeng, and does not collect precise location or a list of installed apps through Umeng.
 

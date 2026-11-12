@@ -1,10 +1,10 @@
-# Doumen Terms of Service
+# Doumen Terms of Service (iOS/iPadOS)
 
 Last Updated: November 13, 2026
 Developer: ZhangXu (Chinese name: 张旭; brand name: Xuyu Tech)
 Contact Email: xuyutechnologies@outlook.com
 
-Welcome to Doumen. Doumen is a local-first tool for generating, recognizing, editing, saving, syncing, and exporting bead patterns. By using Doumen, you agree to these Terms of Service.
+Welcome to Doumen. Doumen is a local-first tool for generating, recognizing, editing, saving, syncing, and exporting bead patterns. These terms apply to Doumen for iOS/iPadOS. For the Android version, see the [Android Terms of Service](https://doumen.work/en/blog/android/terms/). By using Doumen, you agree to these Terms of Service.
 
 ## 1. Service
 
